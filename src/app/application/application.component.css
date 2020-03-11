@@ -1,0 +1,13 @@
+@media (max-width: 480px) {
+  .appContent { font-size: 12px; }
+}
+
+.app:hover {
+  background-color: #93a4b4;
+}
+
+.app {
+  height: 100px;
+  width: 200px;
+  background-color: #798897;
+}

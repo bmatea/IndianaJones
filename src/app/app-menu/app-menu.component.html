@@ -1,0 +1,10 @@
+<app-navigation></app-navigation>
+<div *ngIf="apps.length" class="wrapper ">
+  <div class="container-fluid  min-vh-100 justify-content-center min-vw-100 ">
+    <div class="row container-fluid d-flex flex-wrap min-vh-100 min-vw-100  align-content-center justify-content-center">
+      <div  *ngFor="let app of apps">
+       <app-application [app]="app"></app-application>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<app-navigation></app-navigation>
+<div class="container  min-vh-100 min-vw-100"   style="background-color: #f0444c;">
+  <div class="row">
+    <div class="col-md-12 min-vh-100 d-flex  flex-column justify-content-center">
+      <div class="row">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <div class="card shadow rounded">
+            <div class="card-header">
+              <h3>Login</h3>
+            </div>
+            <div class="card-body">
+              <form [formGroup]="form">
+                    <div class="form-field">
+                        <label for="username">Username:</label>
+                        <input class="form-control form-control-lg rounded-0 " [ngClass]="{'is-invalid': invalidUsername }" name="username" formControlName="username"  required>
+                        <div  class="invalid-feedback">{{this.usernameError}}</div>
+                    </div>
+                    <div class="form-field">
+                        <label for="password">Password:</label>
+                        <input class="form-control form-control-lg rounded-0" [ngClass]="{'is-invalid': invalidPassword }" name="password" formControlName="password" >
+                        <div  class="invalid-feedback">{{this.passwordError}}</div>
+                      </div>
+                    <div class="form-buttons">
+                      <button class="button button-primary"
+                            (click)="submit()">Login
+                      </button>
+                   </div>
+               </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
