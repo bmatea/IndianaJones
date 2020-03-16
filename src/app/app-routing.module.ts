@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './akitaAuth/auth.guard';
 import { TestComponent } from './test/test.component';
 import { AppMenuComponent } from './app-menu/app-menu.component';
+import { ApplicationContentComponent } from './application-content/application-content.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,11 @@ const routes: Routes = [
   {
     path: 'test',
     component: TestComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'appContent',
+    component: ApplicationContentComponent,
     canActivate: [AuthGuard]
   }
 ];

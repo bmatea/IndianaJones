@@ -13,7 +13,7 @@ export class SessionQuery extends Query<SessionState> {
   }
 
   isLoggedIn() {
-    console.log(this.getValue());
+   // console.log(this.getValue());
     return toBoolean(this.getValue().token);
   }
 

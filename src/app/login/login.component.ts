@@ -2,6 +2,8 @@ import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
 import { ReactiveFormsModule, FormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { SessionService } from '../services/session.service';
 import { Router } from '@angular/router';
+import { PermissionStore } from '../permissions/permission.store';
+import { UserService } from '../services/user-service.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,12 @@ export class LoginComponent implements OnInit {
   usernameError;
   passwordError;
 
-  constructor(private authService: SessionService, private router: Router) { }
+  constructor(
+    private authService: SessionService,
+    private router: Router,
+    private permissionStore: PermissionStore,
+    private userService: UserService
+    ) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -40,7 +47,8 @@ export class LoginComponent implements OnInit {
       const name = this.username;
       const password = this.password;
       this.authService.login(name, password).subscribe(() => {
-        this.router.navigateByUrl('');
+      this.userService.getRole(name).subscribe((role: string[]) => this.permissionStore.update({permissions: role}));
+      this.router.navigateByUrl('');
       });
     } else {
       if (!this.username.valid) {

@@ -12,7 +12,7 @@ export class SessionDataService {
 
   constructor(private http: HttpClient) { }
 
-  login(username: string, password: string): Observable<SessionState>{
+  login(username: string, password: string): Observable<SessionState> {
     return this.http.post<SessionState>('http://localhost:8080/auth/signin', {'username': username, "password": password})
     .pipe(tap((res => {
       console.log(res);
@@ -26,7 +26,6 @@ export class SessionDataService {
   }
 
   logout() {
-    localStorage.removeItem('user');
-    localStorage.removeItem('token');
+    localStorage.clear();
   }
 }

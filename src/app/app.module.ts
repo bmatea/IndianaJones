@@ -16,6 +16,12 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ApplicationComponent } from './application/application.component';
 import { AppMenuComponent } from './app-menu/app-menu.component';
 import { UserService } from './services/user-service.service';
+import { HasPermissionDirective } from './permissions/has-permission.directive';
+import { ApplicationContentComponent } from './application-content/application-content.component';
+import { ComponentDirective } from './component.directive';
+import { Test1Component } from './stranice/test1/test1.component';
+import { Test2Component } from './stranice/test2/test2.component';
+import { TabContentComponent } from './tab-content/tab-content.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,13 @@ import { UserService } from './services/user-service.service';
     TestComponent,
     NavigationComponent,
     ApplicationComponent,
-    AppMenuComponent
+    AppMenuComponent,
+    HasPermissionDirective,
+    ApplicationContentComponent,
+    ComponentDirective,
+    Test1Component,
+    Test2Component,
+    TabContentComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +58,11 @@ import { UserService } from './services/user-service.service';
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
     UserService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    Test1Component,
+    Test2Component
+  ]
 })
 export class AppModule { }
 

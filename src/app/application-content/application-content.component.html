@@ -1,0 +1,14 @@
+<app-navigation></app-navigation>
+
+<div *ngIf="components">
+  <ul class="nav nav-pills">
+    <li *ngFor="let c of components" class="active nav-link"><a data-toggle="pill" class="nav-link text-white" href="{{'#' + c.data.naziv}}">{{c.data.naziv}}</a>
+  </ul>
+</div>
+
+  <div class="tab-content">
+    <div *ngFor="let c of components" class="tab-pane fade" id="{{c.data.naziv}}">
+      <app-tab-content [component]="c"></app-tab-content>
+    </div>
+  </div>
+

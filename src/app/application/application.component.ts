@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Application } from '../models/application';
+import { UserService } from '../services/user-service.service';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-application',
@@ -9,9 +11,19 @@ import { Application } from '../models/application';
 export class ApplicationComponent implements OnInit {
 
   @Input() app: Application;
-  constructor() { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
   }
 
+  click() {
+    this.userService.getStranice(this.app.id).subscribe(items => {
+      let params: NavigationExtras = {
+        queryParams: {
+          'components': JSON.stringify(items)
+        }
+      };
+      this.router.navigate(['/appContent'], params);
+    });
+  }
 }
