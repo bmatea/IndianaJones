@@ -1,14 +1,26 @@
 <app-navigation></app-navigation>
 
-<div *ngIf="components">
-  <ul class="nav nav-pills">
-    <li *ngFor="let c of components" class="active nav-link"><a data-toggle="pill" class="nav-link text-white" href="{{'#' + c.data.naziv}}">{{c.data.naziv}}</a>
-  </ul>
-</div>
+  <div *ngIf="components && base">
+    <ul class="nav nav-tabs">
+      <li *ngFor="let c of components; let i = index" class="nav-item" >
+        <a data-toggle="tab"  (click) ="this.selectedcomponent = c" class="nav-link"  >{{c.data.naziv}}</a>
+      </li>
+    </ul>
+  </div>
 
-  <div class="tab-content">
-    <div *ngFor="let c of components" class="tab-pane fade" id="{{c.data.naziv}}">
-      <app-tab-content [component]="c"></app-tab-content>
+  <div class="tab-content " style="background-color: antiquewhite; height: 100vh;">
+    <div *ngFor="let c of components; let i = index">
+      <div *ngIf="selectedcomponent === c" class="tab-pane active"  [class.active]="i===0"  id="{{c.data.naziv}}">
+        <app-tab-content [component]="c"></app-tab-content>
+      </div>
     </div>
   </div>
 
+
+
+<!-- <div *ngIf="components && base">
+  <ul class="nav-tabs justify-content-center" ngbNav #nav="ngbNav" [(activeId)]="active">
+    <li *ngFor="let c of components" ngbNavItem class="shadow rounded border bg-light"><a ngbNavLink  href="{{this.base + '#' + c.data.naziv}}" class="text-dark">{{c.data.naziv}}</a>
+      <ng-template ngbNavContent><app-tab-content [component]="c"></app-tab-content></ng-template>
+  </ul>
+</div> -->

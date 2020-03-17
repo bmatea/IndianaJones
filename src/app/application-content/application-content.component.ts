@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy, Input, ViewChild, ComponentFactoryResolver, ViewContainerRef, ViewChildren, AfterContentInit, QueryList } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, ViewChild, ComponentFactoryResolver, ViewContainerRef, ViewChildren, AfterContentInit, QueryList, AfterViewInit } from '@angular/core';
 import { ComponentDirective } from '../component.directive';
 import { ComponentItem } from '../models/component-item';
 import { StranicaComponent } from '../interfaces/stranica-component';
 import { ActivatedRoute } from '@angular/router';
+import { UserService } from '../services/user-service.service';
 
 @Component({
   selector: 'app-application-content',
@@ -13,18 +14,31 @@ export class ApplicationContentComponent implements OnInit, OnDestroy {
 
   components: ComponentItem[];
   hosts: QueryList<ViewContainerRef>;
+  base = window.location.href;
+  active = 1;
+  selectedcomponent;
  // @ViewChildren('componentHost') public componentHosts: QueryList<ViewContainerRef>;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver, private activatedRoute: ActivatedRoute) {
+  constructor(
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private activatedRoute: ActivatedRoute,
+    private userService: UserService)
+    {
     this.activatedRoute.queryParams.subscribe(params => {
-      console.log(params);
-      return this.components = JSON.parse(params['components']);
+      console.log(params['appId']);
+      //return this.components = JSON.parse(params['components']);
+      this.userService.getStranice(params['appId']).subscribe(strs => {
+        this.components = strs;
+        this.selectedcomponent = this.components[0];
+      });
     });
   }
 
   ngOnInit() {
     //this.loadComponent();
+
   }
+
 
   // ngAfterContentInit(): void {
   //   console.log(this.components);

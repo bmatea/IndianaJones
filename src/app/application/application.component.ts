@@ -23,7 +23,13 @@ export class ApplicationComponent implements OnInit {
           'components': JSON.stringify(items)
         }
       };
-      this.router.navigate(['/appContent'], params);
+
+      let params2: NavigationExtras = {
+        queryParams: {
+          'appId': this.app.id
+        }
+      }
+      this.router.navigate(['/appContent'], params2);
     });
   }
 }

@@ -24,9 +24,11 @@
     "@ng-bootstrap/ng-bootstrap": "~5.2.2",
     "angular-jwt": "^0.1.11",
     "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
     "mdbootstrap": "^4.14.0",
     "moment": "^2.24.0",
     "ng-animate": "^0.3.4",
+    "popper.js": "^1.16.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

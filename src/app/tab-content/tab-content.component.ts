@@ -10,17 +10,16 @@ import { StranicaComponent } from '../interfaces/stranica-component';
 })
 export class TabContentComponent implements OnInit {
 
-  @Input() component;
+  @Input() component: ComponentItem;
   @ViewChild(ComponentDirective, {static: true}) host: ComponentDirective;
 
   constructor(private resolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
-    const item: ComponentItem = this.component;
-    const factory = this.resolver.resolveComponentFactory(item.component);
+    const factory = this.resolver.resolveComponentFactory(this.component.component);
     const viewContainerRef = this.host.viewContainerRef;
     const componentRef = viewContainerRef.createComponent(factory);
-    (componentRef.instance as StranicaComponent).data = item.data;
+    (componentRef.instance as StranicaComponent).data = this.component.data;
   }
 
 }

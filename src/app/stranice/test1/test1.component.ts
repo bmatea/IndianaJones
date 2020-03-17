@@ -12,6 +12,7 @@ export class Test1Component implements OnInit, StranicaComponent {
   constructor() { }
 
   ngOnInit() {
+    console.log("dat iz test1:" + this.data.naziv);
   }
 
 }
