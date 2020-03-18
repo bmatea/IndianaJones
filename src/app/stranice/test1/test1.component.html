@@ -1,4 +1,9 @@
 <div class="container-fluid">
   <h2 class="text-primary">{{this.data.naziv}}</h2>
   {{this.data.text}}
+  <div class="d-flex flex-row">
+    <div *ngFor="let l of [].constructor(this.data.naziv.length); let i = index">
+      <button class="btn btn-primary m-2">{{i}}</button>
+    </div>
+  </div>
 </div>

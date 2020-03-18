@@ -1,5 +1,5 @@
 <app-navigation></app-navigation>
-<div class="container  min-vh-100 min-vw-100"   style="background-color: #f0444c;">
+<div class="container  min-vh-100 min-vw-100"   style="background-color: #9E031E;">
   <div class="row">
     <div class="col-md-12 min-vh-100 d-flex  flex-column justify-content-center">
       <div class="row">
@@ -20,7 +20,7 @@
                         <input class="form-control form-control-lg rounded-0" [ngClass]="{'is-invalid': invalidPassword }" name="password" formControlName="password" >
                         <div  class="invalid-feedback">{{this.passwordError}}</div>
                       </div>
-                    <div class="form-buttons">
+                    <div class="form-buttons mt-2">
                       <button class="button button-primary"
                             (click)="submit()">Login
                       </button>
