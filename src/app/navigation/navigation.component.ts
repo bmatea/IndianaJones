@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { SessionQuery } from '../akitaAuth/session.query';
 import { SessionService } from '../services/session.service';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navigation',
@@ -9,15 +11,18 @@ import { SessionService } from '../services/session.service';
 })
 export class NavigationComponent implements OnInit {
   isLoggedIn: boolean;
+  isLoggedin: Observable<boolean>;
 
-  constructor(private query: SessionQuery, private service: SessionService) { }
+  constructor(private query: SessionQuery, private service: SessionService, private router: Router) { }
 
   ngOnInit() {
+    //this.isLoggedin = this.query.isLoggedIn$
     this.isLoggedIn = this.query.isLoggedIn();
   }
 
   logout() {
     this.service.logout();
+    this.isLoggedIn = false;
   }
 
 }

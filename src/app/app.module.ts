@@ -22,6 +22,7 @@ import { ComponentDirective } from './component.directive';
 import { Test1Component } from './stranice/test1/test1.component';
 import { Test2Component } from './stranice/test2/test2.component';
 import { TabContentComponent } from './tab-content/tab-content.component';
+import { NoviZahtjevComponent } from './Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { TabContentComponent } from './tab-content/tab-content.component';
     ComponentDirective,
     Test1Component,
     Test2Component,
-    TabContentComponent
+    TabContentComponent,
+    NoviZahtjevComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +55,7 @@ import { TabContentComponent } from './tab-content/tab-content.component';
       }
     }),
     NgbModule,
+
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
@@ -61,7 +64,8 @@ import { TabContentComponent } from './tab-content/tab-content.component';
   bootstrap: [AppComponent],
   entryComponents: [
     Test1Component,
-    Test2Component
+    Test2Component,
+    NoviZahtjevComponent
   ]
 })
 export class AppModule { }

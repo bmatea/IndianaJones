@@ -11,7 +11,8 @@ export class StraniceAdapter implements Adapter<ComponentItem> {
   stranice = comps.components;
 
   adapt(item: any): ComponentItem {
-    let i = new ComponentItem(this.stranice['Test1Component'], {id: item.id, naziv: item.naziv});
+    //let i = new ComponentItem(this.stranice['Test1Component'], {id: item.id, naziv: item.naziv});
+    let i = new ComponentItem(this.stranice[item.naziv], {id: item.id, naziv: item.naziv});
     return i;
   }
 

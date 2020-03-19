@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import * as moment from 'moment';
 import { tap, shareReplay} from 'rxjs/operators';
 import { SessionState } from './../akitaAuth/session.store';
+import { resetStores } from '@datorama/akita';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,6 @@ export class SessionDataService {
 
   logout() {
     localStorage.clear();
+    resetStores();
   }
 }

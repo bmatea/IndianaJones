@@ -1,17 +1,19 @@
 <app-navigation></app-navigation>
 
-  <div *ngIf="components && base">
-    <ul class="nav nav-tabs">
-      <li *ngFor="let c of components; let i = index" class="nav-item" >
-        <a data-toggle="tab"  (click) ="this.selectedcomponent = c" class="nav-link"  >{{c.data.naziv}}</a>
-      </li>
-    </ul>
-  </div>
+  <div class="container-fluid" style="background-image:linear-gradient(#adbcd6, #ffffff) ;">
+    <div *ngIf="components && base" >
+      <ul class="nav nav-tabs justify-content-center border-0 vw-100">
+        <li *ngFor="let c of components; let i = index" class="nav-item  border rounded p-0 ml-1 mb-1 shadow" style="background-color: #b90220;">
+          <a data-toggle="tab"  (click) ="this.selectedcomponent = c" [class.selected]="this.selectedcomponent === c" class="nav-link bold text-white shadow-sm"  >{{c.data.naziv}}</a>
+        </li>
+      </ul>
+    </div>
 
-  <div class="tab-content " style="background-color: antiquewhite; height: 100vh;">
-    <div *ngFor="let c of components; let i = index">
-      <div *ngIf="selectedcomponent === c" class="tab-pane active"  [class.active]="i===0"  id="{{c.data.naziv}}">
-        <app-tab-content [component]="c"></app-tab-content>
+    <div class="tab-content container-fluid p-0" style=" width: 100vw;">
+      <div *ngFor="let c of components; let i = index" style=" display: flex; align-items: center; justify-content: center;" >
+        <div *ngIf="selectedcomponent === c" class="tab-pane active w-100"  [class.active]="i===0"  id="{{c.data.naziv}}">
+          <app-tab-content [component]="c"></app-tab-content>
+        </div>
       </div>
     </div>
   </div>

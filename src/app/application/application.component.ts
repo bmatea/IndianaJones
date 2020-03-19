@@ -18,11 +18,11 @@ export class ApplicationComponent implements OnInit {
 
   click() {
     this.userService.getStranice(this.app.id).subscribe(items => {
-      let params: NavigationExtras = {
-        queryParams: {
-          'components': JSON.stringify(items)
-        }
-      };
+      // let params: NavigationExtras = {
+      //   queryParams: {
+      //     'components': JSON.stringify(items)
+      //   }
+      // };
 
       let params2: NavigationExtras = {
         queryParams: {

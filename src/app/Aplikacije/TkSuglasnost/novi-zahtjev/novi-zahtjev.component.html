@@ -1,0 +1,111 @@
+<div class="d-flex container flex-column shadow-md" >
+  <!--Icon and heading container-->
+  <h3 class="border-bottom border-secondary p-2">Zahtjev za izdavanje TK suglasnosti</h3>
+  <div class="d-flex flex-row ">
+  <!--Outer double-column container-->
+  <div class="d-flex flex-column flex-grow-1">
+    <!--Forms container-->
+    <h5 class="pl-2">Unos Zahtjeva</h5>
+    <hr/>
+    <form [formGroup]="" class="ml-3">
+      <div class="d-flex flex-column flex-grow-1 " formGroup="osobniPodaci">
+        <!--Osobni podaci container-->
+        <h6>Osobni podaci podnositelja zahtjeva</h6>
+        <div class="d-flex mt-2 mb-3" >
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="privatni">
+            <label class="form-check-label" for="inlineRadio1">Privatni korisnik</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="poslovni">
+            <label class="form-check-label" for="inlineRadio2">Poslovni korisnik</label>
+          </div>
+        </div>
+        <div class="d-flex form-group">
+          <label for="ime">Ime: *</label>
+          <input name="ime" type="text" formControlName="ime" class="form-control w-50">
+        </div>
+        <div class="d-flex form-group">
+          <label for="prezime">Prezime: *</label>
+          <input name="prezime" type="text" formControlName="prezime" class="form-control w-50">
+        </div>
+        <div class="d-flex form-group">
+          <label for="tel">Kontakt tel/mob: *</label>
+          <input name="tel" type="text" formControlName="tel" class="form-control w-50">
+        </div>
+        <div class="d-flex form-group">
+          <label for="email">Kontakt e-mail: *</label>
+          <input name="email" type="text" formControlName="email" class="form-control w-50">
+        </div>
+
+      </div>
+      <div class="d-flex flex-column" formGroup="adresaZaDostavu">
+        <!--Adresa za dostavu rješenja container-->
+        <h6 class="mb-4">Adresa za dostavu rješenja: *</h6>
+        <div class="d-flex form-group">
+          <label for="ime">Ime: *</label>
+          <input name="ime" type="text" formControlName="ime" class="form-control w-50">
+        </div>
+        <div class="d-flex form-group">
+          <label for="prezime">Prezime: *</label>
+          <input name="prezime" type="text" formControlName="prezime" class="form-control w-50">
+        </div>
+        <div class="d-flex form-group flex-column">
+          <label for="mjesto">Mjesto: *</label>
+          <select formControlName="mjesto" name="mjesto" class="form-control" style="width: calc(170px + 50%);">
+            <option [ngValue]="null">Odaberite mjesto...</option>
+            <option *ngFor="let m of (mjesta$ | async); let i = index" [ngValue]="m.naziv">{{m.naziv}}</option>
+          </select>
+        </div>
+        <div class="d-flex form-group flex-column">
+          <label for="ulica">Ulica: *</label>
+          <select formControlName="mjesto" name="mjesto" class="form-control" style="width: calc(170px + 50%);">
+            <option [ngValue]="null">Odaberite ulicu...</option>
+            <option *ngFor="let u of (ulice$ | async); let i = index" [ngValue]="u.naziv">{{u.naziv}}</option>
+          </select>
+        </div>
+        <div class="d-flex form-group">
+          <label for="kucniBr">Kućni broj: </label>
+          <input name="kucniBr" type="text" formControlName="kucniBr" class="form-control w-50">
+        </div>
+        <div class="d-flex form-group">
+          <label for="dodatak">Dodatak: </label>
+          <input name="dodatak" type="text" formControlName="dodatak" class="form-control w-50">
+        </div>
+        <div class="d-flex form-group">
+          <label for="napomena">Napomena: </label>
+          <input name="napomena" type="text" formControlName="napomena" class="form-control w-50">
+        </div>
+        <div class="d-flex form-group flex-column">
+          <label for="opcina">Općina: *</label>
+          <select formControlName="općina" name="opcina" class="form-control" style="width: calc(170px + 50%);">
+            <option [ngValue]="null">Odaberite općinu...</option>
+            <option *ngFor="let o of (opcine$ | async); let i = index" [ngValue]="o.naziv">{{o.naziv}}</option>
+          </select>
+        </div>
+        <div class="d-flex form-group flex-column">
+          <label for="posta">Pošta: *</label>
+          <select formControlName="pošta" name="posta" class="form-control" style="width: calc(170px + 50%);">
+            <option [ngValue]="null">Odaberite poštu...</option>
+            <option *ngFor="let p of (poste$ | async); let i = index" [ngValue]="p.naziv">{{p.naziv}}</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="d-flex">
+        <!--Podaci o lokaciji/trasi container-->
+
+      </div>
+    </form>
+  </div>
+  <div class="d-flex flex-column justify-self-end " style="max-width: 40%;">
+    <!--Info container-->
+    <h5 class="p-2 m-2"><b>Info</b></h5>
+    <p>Pod pojmom 'TK Suglasnost' podrazumijeva se dokument kojim se potvrđuje da na lokaciji koja je navedena u Zahtjevu nema podzemnih instalacija koje
+      su u vlasništvu JP HT d.d. Mostar ili kojim se, u slučaju postojanja TK instalacija, definiraju posebni uvjeti pod kojima se daje suglasnost za obavljanje građevinskih
+      radova. Podnositelji Zahtjeva mogu biti domaće ili inozemne fizičke ili pravne osobe ili institucije državne/javne uprave (županije, općine, ministarstva
+       i sl.). Zahtjev je valjan ako su u njemu uneseni odgovarajući osobni kontakt podaci (uključujući adresu na koju će biti dostavljena tražena suglasnost i prilozi zahtjeva).
+    </p>
+  </div>
+</div>
+</div>

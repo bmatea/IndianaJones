@@ -3,11 +3,11 @@
 }
 
 .app:hover {
-  background-color: #93a4b4;
+  background-color: #67707f;
 }
 
 .app {
   height: 100px;
   width: 200px;
-  background-color: #798897;
+  background-color: #ae1a2c;
 }

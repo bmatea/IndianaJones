@@ -31,11 +31,12 @@ export class LoginComponent implements OnInit {
         Validators.required,
         Validators.minLength(2)
       ]),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(1)
-    ])
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(1)
+      ])
     });
+    this.authService.logout();
   }
 
   get username() { return this.form.get('username').value; }

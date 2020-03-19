@@ -17,6 +17,7 @@ export class SessionService {
 
   logout() {
     this.authDataService.logout();
+    console.log(this.authStore.getValue().token);
   }
 
 
