@@ -5,29 +5,37 @@
   <!--Outer double-column container-->
   <div class="d-flex flex-column flex-grow-1">
     <!--Forms container-->
-    <h5 class="pl-2">Unos Zahtjeva</h5>
     <hr/>
-    <form [formGroup]="" class="ml-3">
-      <div class="d-flex flex-column flex-grow-1 " formGroup="osobniPodaci">
+    <form [formGroup]="form" class="ml-3">
+      <div class="d-flex flex-column flex-grow-1 " formGroupName="osobniPodaci">
         <!--Osobni podaci container-->
-        <h6>Osobni podaci podnositelja zahtjeva</h6>
+        <h5>Osobni podaci podnositelja zahtjeva</h5>
+        <div class="border-top my-2" style="width: calc(170px + 50%);"></div>
         <div class="d-flex mt-2 mb-3" >
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="privatni">
-            <label class="form-check-label" for="inlineRadio1">Privatni korisnik</label>
+            <input class="form-check-input" type="radio" name="privatniKorisnik" id="inlineRadio1" value="privatni"  formControlName="privatniKorisnik" (change)="radioChange()">
+            <label class="form-check-label" for="privatni">Privatni korisnik</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="poslovni">
-            <label class="form-check-label" for="inlineRadio2">Poslovni korisnik</label>
+            <input class="form-check-input" type="radio" name="privatniKorisnik" id="inlineRadio2" value="poslovni" formControlName="privatniKorisnik">
+            <label class="form-check-label" for="poslovni">Poslovni korisnik</label>
           </div>
         </div>
-        <div class="d-flex form-group">
+        <div *ngIf="" class="d-flex form-group">
           <label for="ime">Ime: *</label>
           <input name="ime" type="text" formControlName="ime" class="form-control w-50">
         </div>
-        <div class="d-flex form-group">
+        <div *ngIf="!this.korisnikType" class="d-flex form-group">
+          <label for="naziv">Naziv: *</label>
+          <input name="naziv" type="text" formControlName="naziv" class="form-control w-50">
+        </div>
+        <div *ngIf="this.korisnikType" class="d-flex form-group">
           <label for="prezime">Prezime: *</label>
           <input name="prezime" type="text" formControlName="prezime" class="form-control w-50">
+        </div>
+        <div *ngIf="!this.korisnikType" class="d-flex form-group">
+          <label for="dodatak">Dodatak: *</label>
+          <input name="dodatak" type="text" formControlName="dodatak" class="form-control w-50">
         </div>
         <div class="d-flex form-group">
           <label for="tel">Kontakt tel/mob: *</label>
@@ -39,27 +47,100 @@
         </div>
 
       </div>
-      <div class="d-flex flex-column" formGroup="adresaZaDostavu">
+      <div class="d-flex flex-column" formGroupName="adresaZaDostavu">
         <!--Adresa za dostavu rješenja container-->
-        <h6 class="mb-4">Adresa za dostavu rješenja: *</h6>
-        <div class="d-flex form-group">
+        <h5 class="mb-2">Adresa za dostavu rješenja: *</h5>
+        <div class="border-top my-2" style="width: calc(170px + 50%);"></div>
+        <div *ngIf="this.korisnikType" class="d-flex form-group mt-3">
           <label for="ime">Ime: *</label>
           <input name="ime" type="text" formControlName="ime" class="form-control w-50">
         </div>
-        <div class="d-flex form-group">
+        <div *ngIf="!this.korisnikType" class="d-flex form-group">
+          <label for="naziv">Naziv: *</label>
+          <input name="naziv" type="text" formControlName="naziv" class="form-control w-50">
+        </div>
+        <div *ngIf="!this.korisnikType" class="d-flex form-group">
+          <label for="dodatak">Dodatak: *</label>
+          <input name="dodatak" type="text" formControlName="dodatak" class="form-control w-50">
+        </div>
+        <div *ngIf="this.korisnikType" class="d-flex form-group">
           <label for="prezime">Prezime: *</label>
           <input name="prezime" type="text" formControlName="prezime" class="form-control w-50">
         </div>
         <div class="d-flex form-group flex-column">
           <label for="mjesto">Mjesto: *</label>
-          <select formControlName="mjesto" name="mjesto" class="form-control" style="width: calc(170px + 50%);">
+          <select formControlName="mjesto" name="mjesto" class="form-control" style="width: calc(170px + 50%);" >
             <option [ngValue]="null">Odaberite mjesto...</option>
             <option *ngFor="let m of (mjesta$ | async); let i = index" [ngValue]="m.naziv">{{m.naziv}}</option>
           </select>
         </div>
         <div class="d-flex form-group flex-column">
           <label for="ulica">Ulica: *</label>
-          <select formControlName="mjesto" name="mjesto" class="form-control" style="width: calc(170px + 50%);">
+          <select formControlName="ulica" name="mjesto" class="form-control" style="width: calc(170px + 50%);" >
+            <option [ngValue]="null">Odaberite ulicu...</option>
+            <option *ngFor="let u of (ulice$ | async); let i = index" [ngValue]="u.naziv">{{u.naziv}}</option>
+          </select>
+        </div>
+        <div class="d-flex form-group">
+          <label for="kucniBr">Kućni broj: </label>
+          <input name="kucniBr" type="text" formControlName="kucniBr" class="form-control w-50">
+        </div>
+        <div class="d-flex form-group">
+          <label for="dodatak">Dodatak: </label>
+          <input name="dodatak" type="text" formControlName="dodatak2" class="form-control w-50">
+        </div>
+        <div class="d-flex form-group">
+          <label for="napomena">Napomena: </label>
+          <input name="napomena" type="text" formControlName="napomena" class="form-control w-50">
+        </div>
+        <div class="d-flex form-group flex-column">
+          <label for="opcina">Općina: *</label>
+          <select  name="opcina" class="form-control" formControlName="opcina" style="width: calc(170px + 50%);">
+            <option [ngValue]="null">Odaberite općinu...</option>
+            <option *ngFor="let o of (opcine$ | async); let i = index" [ngValue]="o.naziv">{{o.naziv}}</option>
+          </select>
+        </div>
+        <div class="d-flex form-group flex-column">
+          <label for="posta">Pošta: *</label>
+          <select name="posta" class="form-control" formControlName="posta" style="width: calc(170px + 50%);">
+            <option [ngValue]="null">Odaberite poštu...</option>
+            <option *ngFor="let p of (poste$ | async); let i = index" [ngValue]="p.naziv">{{p.naziv}}</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="d-flex flex-column" formGroupName="podaciOLokaciji">
+        <!--Podaci o lokaciji/trasi container-->
+        <h5 class="mb-4">Podaci o lokaciji/trasi: *</h5>
+        <div class="border-top my-2" style="width: calc(170px + 50%); border-top-color: rgb(200, 206, 218) !important;"></div>
+        <div class="d-flex form-group flex-column mt-2">
+          <label for="mjesto">Tip suglasnosti: *</label>
+          <select formControlName="tipSuglasnosti" name="tipSuglasnosti" class="form-control" style="width: calc(170px + 50%);" >
+            <option [ngValue]="null">Odaberite tip...</option>
+            <option *ngFor="let t of (tipoviSuglasnosti$ | async); let i = index" [ngValue]="t.naziv">{{t.naziv}}</option>
+          </select>
+        </div>
+        <div class="d-flex form-group flex-column">
+          <label for="kokc">Naziv KO i KČ(opis): </label>
+          <input name="kokc" type="text" formControlName="kokc" class="form-control" style="width: calc(170px + 50%);">
+        </div>
+        <div class="d-flex form-group flex-column">
+          <label for="svrha" style="width: fit-content;">Svrha traženja suglasnosti: *</label>
+          <select formControlName="svrha" name="svrha" class="form-control" style="width: calc(170px + 50%);" >
+            <option [ngValue]="null">Odaberite svrhu...</option>
+            <option *ngFor="let s of (svrhe$ | async); let i = index" [ngValue]="s.naziv">{{s.naziv}}</option>
+          </select>
+        </div>
+        <div class="d-flex form-group flex-column">
+          <label for="mjesto">Mjesto: *</label>
+          <select formControlName="mjesto" name="mjesto" class="form-control" style="width: calc(170px + 50%);" >
+            <option [ngValue]="null">Odaberite mjesto...</option>
+            <option *ngFor="let m of (mjesta$ | async); let i = index" [ngValue]="m.naziv">{{m.naziv}}</option>
+          </select>
+        </div>
+        <div class="d-flex form-group flex-column">
+          <label for="ulica">Ulica: *</label>
+          <select formControlName="ulica" name="mjesto" class="form-control" style="width: calc(170px + 50%);" >
             <option [ngValue]="null">Odaberite ulicu...</option>
             <option *ngFor="let u of (ulice$ | async); let i = index" [ngValue]="u.naziv">{{u.naziv}}</option>
           </select>
@@ -78,23 +159,18 @@
         </div>
         <div class="d-flex form-group flex-column">
           <label for="opcina">Općina: *</label>
-          <select formControlName="općina" name="opcina" class="form-control" style="width: calc(170px + 50%);">
+          <select  name="opcina" class="form-control" formControlName="opcina" style="width: calc(170px + 50%);">
             <option [ngValue]="null">Odaberite općinu...</option>
             <option *ngFor="let o of (opcine$ | async); let i = index" [ngValue]="o.naziv">{{o.naziv}}</option>
           </select>
         </div>
         <div class="d-flex form-group flex-column">
           <label for="posta">Pošta: *</label>
-          <select formControlName="pošta" name="posta" class="form-control" style="width: calc(170px + 50%);">
+          <select name="posta" class="form-control" formControlName="posta" style="width: calc(170px + 50%);">
             <option [ngValue]="null">Odaberite poštu...</option>
             <option *ngFor="let p of (poste$ | async); let i = index" [ngValue]="p.naziv">{{p.naziv}}</option>
           </select>
         </div>
-
-      </div>
-      <div class="d-flex">
-        <!--Podaci o lokaciji/trasi container-->
-
       </div>
     </form>
   </div>
