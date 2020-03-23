@@ -76,9 +76,9 @@
         </div>
         <div class="d-flex form-group flex-column">
           <label for="ulica">Ulica: *</label>
-          <select formControlName="ulica" name="mjesto" id="adresaUlica" class="form-control" (load)="ulica($event)" style="width: calc(170px + 50%);" >
-            <option *ngIf="(ulice$ | async)?.length != 1 && (ulice$ | async)?.length > 0"  value="null">Odaberite ulicu...</option>
-            <option *ngFor="let u of (ulice$ | async); let i = index"  value="{{u.geoId}}">{{u.naziv}}</option>
+          <select formControlName="ulica" name="ulica" id="adresaUlica" class="form-control" style="width: calc(170px + 50%);" >
+            <option [selected]="(ulice$ | async)?.length > 1"  value="null">Odaberite ulicu...</option>
+            <option *ngFor="let u of (ulice$ | async); let i = index" [selected]="(ulice$ | async)?.length === 1" value="{{u.geoId}}">{{u.naziv}}</option>
           </select>
         </div>
         <div class="d-flex form-group">
@@ -95,16 +95,16 @@
         </div>
         <div class="d-flex form-group flex-column">
           <label for="opcina">Općina: *</label>
-          <select  name="opcina" class="form-control" id="adresaOpcina" formControlName="opcina" style="width: calc(170px + 50%);">
-            <option value="null">Odaberite općinu...</option>
-            <option *ngFor="let o of (opcine$ | async); let i = index" value="{{o.geoId}}">{{o.naziv}}</option>
+          <select  name="opcina" class="form-control" id="adresaOpcina" formControlName="opcina"  style="width: calc(170px + 50%);">
+            <option [selected]="(opcine$ | async)?.length > 1" value="null">Odaberite općinu...</option>
+            <option *ngFor="let o of (opcine$ | async); let i = index" [selected]="(opcine$ | async)?.length === 1" value="{{o.geoId}}">{{o.naziv}}</option>
           </select>
         </div>
         <div class="d-flex form-group flex-column">
           <label for="posta">Pošta: *</label>
           <select name="posta" class="form-control" id="adresaPosta" formControlName="posta" style="width: calc(170px + 50%);">
-            <option value="null">Odaberite poštu...</option>
-            <option *ngFor="let p of (poste$ | async); let i = index" value="{{p.geoId}}">{{p.naziv}}</option>
+            <option [selected]="(poste$ | async)?.length > 1" value="null">Odaberite poštu...</option>
+            <option *ngFor="let p of (poste$ | async); let i = index" [selected]="(poste$ | async)?.length === 1" value="{{p.geoId}}">{{p.naziv}}</option>
           </select>
         </div>
         <div class="d-flex form-group">
@@ -123,8 +123,9 @@
         <div class="d-flex form-group flex-column mt- 2">
           <label for="mjesto">Tip suglasnosti: *</label>
           <select formControlName="tipSuglasnosti" name="tipSuglasnosti" class="form-control" style="width: calc(170px + 50%);" >
-            <option [ngValue]="null">Odaberite tip...</option>
-            <option *ngFor="let t of (tipoviSuglasnosti$ | async); let i = index" [ngValue]="t.naziv">{{t.naziv}}</option>
+            <option  value="null">Odaberite tip...</option>
+            <option value="1729">Lokacija</option>
+            <option value="1730">Trasa</option>
           </select>
         </div>
         <div class="d-flex form-group flex-column">
@@ -135,21 +136,23 @@
           <label for="svrha" style="width: fit-content;">Svrha traženja suglasnosti: *</label>
           <select formControlName="svrha" name="svrha" class="form-control" style="width: calc(170px + 50%);" >
             <option [ngValue]="null">Odaberite svrhu...</option>
-            <option *ngFor="let s of (svrhe$ | async); let i = index" [ngValue]="s.naziv">{{s.naziv}}</option>
+            <option value="2309">Izgradnja</option>
+            <option value="2310">Legalizacija</option>
+            <option value="2311">Rekonstrukcija</option>
           </select>
         </div>
         <div class="d-flex form-group flex-column">
           <label for="mjesto">Mjesto: *</label>
-          <select formControlName="mjesto" name="mjesto" class="form-control" style="width: calc(170px + 50%);" >
-            <option [ngValue]="null">Odaberite mjesto...</option>
-            <option *ngFor="let m of (mjesta$ | async); let i = index" [ngValue]="m.naziv">{{m.naziv}}</option>
+          <select formControlName="mjesto" name="mjesto" class="form-control" style="width: calc(170px + 50%);" (change)="onSelectChangeTrasa($event)">
+            <option value="null">Odaberite mjesto...</option>
+            <option *ngFor="let m of (trasa_mjesta$ | async); let i = index" value="{{m.geoId}}">{{m.naziv}}</option>
           </select>
         </div>
         <div class="d-flex form-group flex-column">
           <label for="ulica">Ulica: *</label>
           <select formControlName="ulica" name="mjesto" class="form-control" style="width: calc(170px + 50%);" >
-            <option [ngValue]="null">Odaberite ulicu...</option>
-            <option *ngFor="let u of (ulice$ | async); let i = index" [ngValue]="u.naziv">{{u.naziv}}</option>
+            <option [selected]="(trasa_ulice$ | async)?.length > 1" value="null">Odaberite ulicu...</option>
+            <option *ngFor="let u of (trasa_ulice$ | async); let i = index" [selected]="(trasa_ulice$ | async)?.length === 1" value="{{u.geoId}}">{{u.naziv}}</option>
           </select>
         </div>
         <div class="d-flex form-group">
@@ -167,15 +170,15 @@
         <div class="d-flex form-group flex-column">
           <label for="opcina">Općina: *</label>
           <select  name="opcina" class="form-control" formControlName="opcina" style="width: calc(170px + 50%);">
-            <option [ngValue]="null">Odaberite općinu...</option>
-            <option *ngFor="let o of (opcine$ | async); let i = index" [ngValue]="o.naziv">{{o.naziv}}</option>
+            <option [selected]="(trasa_opcine$ | async)?.length > 1" value="null">Odaberite općinu...</option>
+            <option [selected]="(trasa_opcine$ | async)?.length === 1" *ngFor="let o of (trasa_opcine$ | async); let i = index" value="{{o.geoId}}">{{o.naziv}}</option>
           </select>
         </div>
         <div class="d-flex form-group flex-column">
           <label for="posta">Pošta: *</label>
           <select name="posta" class="form-control" formControlName="posta" style="width: calc(170px + 50%);">
-            <option [ngValue]="null">Odaberite poštu...</option>
-            <option *ngFor="let p of (poste$ | async); let i = index" [ngValue]="p.naziv">{{p.naziv}}</option>
+            <option [selected]="(trasa_poste$ | async)?.length > 1" value="null">Odaberite poštu...</option>
+            <option [selected]="(trasa_poste$ | async)?.length === 1" *ngFor="let p of (trasa_poste$ | async); let i = index" value="{{p.geoId}}">{{p.naziv}}</option>
           </select>
         </div>
         <div class="d-flex form-group">

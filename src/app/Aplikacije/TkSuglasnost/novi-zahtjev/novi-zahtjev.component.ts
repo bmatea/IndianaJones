@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { tap, map } from 'rxjs/operators';
 import { FormGroup, FormBuilder, Validators, FormControl, FormArray } from '@angular/forms';
 import { TkSuglasnostService } from './tk-suglasnost.service';
 
@@ -15,12 +15,10 @@ export class NoviZahtjevComponent implements OnInit {
   public ulice$: Observable<any>;
   public opcine$: Observable<any>;
   public poste$: Observable<any>;
-  public tipoviSuglasnosti$: Observable<any>;
-  public svrhe$: Observable<any>;
-  public trasa_mjesta$;
-  public trasa_ulice$;
-  public trasa_opcine$;
-  public trasa_poste$;
+  public trasa_mjesta$: Observable<any>;
+  public trasa_ulice$: Observable<any>;
+  public trasa_opcine$: Observable<any>;
+  public trasa_poste$: Observable<any>;
 
   form: FormGroup;
   public korisnikType = true;
@@ -58,7 +56,7 @@ export class NoviZahtjevComponent implements OnInit {
         kokc: ['', [Validators.required]],
         svrha: ['', [Validators.required]],
         mjesto: ['', [Validators.required]],
-        ulica: ['', [Validators.required]],
+        ulica: ['null', [Validators.required]],
         kucniBr: ['', [Validators.required]],
         dodatak: ['', [Validators.required]],
         napomena: ['', [Validators.required]],
@@ -73,7 +71,7 @@ export class NoviZahtjevComponent implements OnInit {
     this.form.get('adresaZaDostavu.noAdresa').valueChanges.subscribe(v => this.onCheckboxChecked(v, 'adresaZaDostavu'));
     this.form.get('podaciOLokaciji.noAdresa').valueChanges.subscribe(v => this.onCheckboxChecked(v, 'podaciOLokaciji'));
 
-    this.mjesta$ = this.service.getMjesta();
+    this.mjesta$ = this.trasa_mjesta$ = this.service.getMjesta();
   }
 
   onCheckboxChecked(value, form) {
@@ -106,23 +104,15 @@ export class NoviZahtjevComponent implements OnInit {
     this.opcine$ = this.service.getOpcine(e.target.value);
     this.poste$ = this.service.getPoste(e.target.value);
 
-
-    let deca = document.querySelector('#adresaUlica').querySelector('option');
-    this.form.get('adresaZaDostavu.ulica').setValue(deca[0].value);
-
-
     this.cd.detectChanges();
   }
 
-  ulica(e) {
-    let i = e.target.querySelectorAll('option');
-    if (i) {
-      console.log(i.length)
-      if (i.length > 1) {
-        this.form.get('adresaZaDostavu.ulica').setValue(null);
-      }
-    }
-    console.log(this.form.value);
+  onSelectChangeTrasa(e) {
+    this.trasa_ulice$ = this.service.getUlice(e.target.value);
+    this.trasa_opcine$ = this.service.getOpcine(e.target.value);
+    this.trasa_poste$ = this.service.getPoste(e.target.value);
+
+    this.cd.detectChanges();
   }
 
 }
