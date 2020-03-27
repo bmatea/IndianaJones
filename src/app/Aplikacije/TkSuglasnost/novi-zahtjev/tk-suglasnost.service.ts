@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -24,14 +24,16 @@ export class TkSuglasnostService {
   getOpcine(mjestoId: string) {
     return this.http.get(this.ulr + '/opcine?mjestoId=' + mjestoId).pipe(
       map((data:any[]) => data.map(item => item)));
-    }
+  }
 
-    getPoste(mjestoId: string) {
+  getPoste(mjestoId: string) {
       return this.http.get(this.ulr + '/poste?mjestoId=' + mjestoId).pipe(
         map((data:any[]) => data.map(item => item)));
   }
 
-  noviZahtjev() {
-
+  postNoviZahtjev(payload) {
+    return this.http.post('http://172.22.3.100:32603/tk_suglasnost/NovaStranka', payload).pipe(
+      catchError(error => error)
+    );
   }
 }

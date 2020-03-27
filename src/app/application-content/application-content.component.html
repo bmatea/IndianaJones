@@ -4,7 +4,7 @@
     <div *ngIf="components && base" >
       <ul class="nav nav-tabs justify-content-center border-0 vw-100">
         <li *ngFor="let c of components; let i = index" class="nav-item  border rounded p-0 ml-1 mb-1 shadow" style="background-color: #b90220;">
-          <a data-toggle="tab"  (click) ="this.selectedcomponent = c" [class.selected]="this.selectedcomponent === c" class="nav-link bold text-white shadow-sm"  >{{c.data.naziv}}</a>
+          <a data-toggle="tab"  (click) ="this.selectedcomponent = c" [class.selected]="this.selectedcomponent === c" class="nav-link bold text-white shadow-sm" id={{c.data.naziv}}  >{{c.data.naziv}}</a>
         </li>
       </ul>
     </div>

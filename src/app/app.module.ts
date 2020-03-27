@@ -23,6 +23,8 @@ import { Test1Component } from './stranice/test1/test1.component';
 import { Test2Component } from './stranice/test2/test2.component';
 import { TabContentComponent } from './tab-content/tab-content.component';
 import { NoviZahtjevComponent } from './Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component';
+import { PregledZahtjevaComponent } from './Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.component';
+import { SharedService } from './Aplikacije/TkSuglasnost/shared.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { NoviZahtjevComponent } from './Aplikacije/TkSuglasnost/novi-zahtjev/nov
     Test2Component,
     TabContentComponent,
     NoviZahtjevComponent,
+    PregledZahtjevaComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,13 +62,15 @@ import { NoviZahtjevComponent } from './Aplikacije/TkSuglasnost/novi-zahtjev/nov
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
-    UserService
+    UserService,
+    SharedService
   ],
   bootstrap: [AppComponent],
   entryComponents: [
     Test1Component,
     Test2Component,
-    NoviZahtjevComponent
+    NoviZahtjevComponent,
+    PregledZahtjevaComponent
   ]
 })
 export class AppModule { }

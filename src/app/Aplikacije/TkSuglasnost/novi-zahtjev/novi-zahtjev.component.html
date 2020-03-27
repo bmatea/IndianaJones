@@ -1,4 +1,4 @@
-<div class="d-flex container flex-column shadow-sm rounded" style="background-color: rgb(247, 249, 252);" >
+<div class="d-flex container flex-column shadow-sm rounded mb-5 pb-5" style="background-color: rgb(247, 249, 252);" >
   <!--Icon and heading container-->
   <h3 class="border-bottom border-secondary p-2">Zahtjev za izdavanje TK suglasnosti</h3>
   <div class="d-flex flex-row ">
@@ -6,8 +6,8 @@
   <div class="d-flex flex-column flex-grow-1">
     <!--Forms container-->
     <hr/>
-    <form [formGroup]="form" class="ml-3">
-      <div class="d-flex flex-column flex-grow-1 " formGroupName="osobniPodaci">
+    <form [formGroup]="form" class="ml-3" (ngSubmit)="send()">
+      <div class="d-flex flex-column flex-grow-1 " formGroupName="stranka">
         <!--Osobni podaci container-->
         <h5>Osobni podaci podnositelja zahtjeva</h5>
         <div class="border-top my-2" style="width: calc(170px + 50%);"></div>
@@ -22,72 +22,84 @@
           </div>
         </div>
         <div *ngIf="this.isPrivatni()" class="d-flex form-group">
-          <label for="ime">Ime: *</label>
+          <label for="ime">Ime: * </label>
           <input name="ime" type="text" formControlName="ime" class="form-control w-50">
+          <span *ngIf="this.hasErrors('stranka.ime')" class="text-danger ml-2 align-middle ">Obavezan unos</span>
         </div>
         <div *ngIf="!this.isPrivatni()" class="d-flex form-group">
           <label for="naziv">Naziv: *</label>
           <input name="naziv" type="text" formControlName="naziv" class="form-control w-50">
+          <span *ngIf="this.hasErrors('stranka.naziv')" class="text-danger ml-2 align-middle ">Obavezan unos</span>
         </div>
         <div *ngIf="this.isPrivatni()" class="d-flex form-group">
           <label for="prezime">Prezime: *</label>
           <input name="prezime" type="text" formControlName="prezime" class="form-control w-50">
+          <span *ngIf="this.hasErrors('stranka.prezime')" class="text-danger ml-2 align-middle ">Obavezan unos</span>
         </div>
         <div *ngIf="!this.isPrivatni()" class="d-flex form-group">
-          <label for="dodatak">Dodatak: *</label>
+          <label for="dodatak">Dodatak: </label>
           <input name="dodatak" type="text" formControlName="dodatak" class="form-control w-50">
+          <span *ngIf="this.hasErrors('stranka.dodatak')" class="text-danger ml-2 align-middle ">Obavezan unos</span>
         </div>
         <div class="d-flex form-group">
           <label for="tel">Kontakt tel/mob: *</label>
           <input name="tel" type="text" formControlName="tel" class="form-control w-50">
+          <span *ngIf="this.hasErrors('stranka.tel')" class="text-danger ml-2 align-middle ">Obavezan unos</span>
         </div>
         <div class="d-flex form-group">
           <label for="email">Kontakt e-mail: *</label>
           <input name="email" type="text" formControlName="email" class="form-control w-50">
+          <span *ngIf="this.hasErrors('stranka.email')" class="text-danger ml-2 align-middle ">Obavezan unos</span>
         </div>
 
       </div>
-      <div class="d-flex flex-column" formGroupName="adresaZaDostavu">
+      <div class="d-flex flex-column" formGroupName="adresaObavijest" >
         <!--Adresa za dostavu rješenja container-->
         <h5 class="mb-2">Adresa za dostavu rješenja: *</h5>
         <div class="border-top my-2" style="width: calc(170px + 50%);"></div>
         <div *ngIf="this.isPrivatni()" class="d-flex form-group mt-3">
           <label for="ime">Ime: *</label>
           <input name="ime" type="text" formControlName="ime" class="form-control w-50">
+          <span *ngIf="this.hasErrors('adresaObavijest.ime')" class="text-danger ml-2 align-middle ">Obavezan unos</span>
         </div>
         <div *ngIf="!this.isPrivatni()" class="d-flex form-group">
           <label for="naziv">Naziv: *</label>
           <input name="naziv" type="text" formControlName="naziv" class="form-control w-50">
+          <span *ngIf="this.hasErrors('adresaObavijest.naziv')" class="text-danger ml-2 align-middle ">Obavezan unos</span>
         </div>
         <div *ngIf="!this.isPrivatni()" class="d-flex form-group">
-          <label for="dodatak1">Dodatak: *</label>
-          <input name="dodatak1" type="text" formControlName="dodatak1" class="form-control w-50">
+          <label for="dodatak">Dodatak: *</label>
+          <input name="dodatak" type="text" formControlName="dodatak" class="form-control w-50">
+          <span *ngIf="this.hasErrors('adresaObavijest.dodatak')" class="text-danger ml-2 align-middle ">Obavezan unos</span>
         </div>
         <div *ngIf="this.isPrivatni()" class="d-flex form-group">
           <label for="prezime">Prezime: *</label>
           <input name="prezime" type="text" formControlName="prezime" class="form-control w-50">
+          <span *ngIf="this.hasErrors('adresaObavijest.prezime')" class="text-danger ml-2 align-middle ">Obavezan unos</span>
         </div>
         <div class="d-flex form-group flex-column">
           <label for="mjesto">Mjesto: *</label>
           <select formControlName="mjesto" name="mjesto" id="adresaMjesto" class="form-control" style="width: calc(170px + 50%);" (change)="onSelectChange($event)">
-            <option value="null">Odaberite mjesto...</option>
+            <option [selected]="(mjesta$ | async)?.length > 1" value="null">Odaberite mjesto...</option>
             <option *ngFor="let m of (mjesta$ | async); let i = index" value="{{m.geoId}}" >{{m.naziv}}</option>
           </select>
+          <span *ngIf="this.hasErrors('adresaObavijest.mjesto')" class="text-danger ml-2 align-middle ">Obavezan odabir</span>
         </div>
         <div class="d-flex form-group flex-column">
           <label for="ulica">Ulica: *</label>
           <select formControlName="ulica" name="ulica" id="adresaUlica" class="form-control" style="width: calc(170px + 50%);" >
-            <option [selected]="(ulice$ | async)?.length > 1"  value="null">Odaberite ulicu...</option>
-            <option *ngFor="let u of (ulice$ | async); let i = index" [selected]="(ulice$ | async)?.length === 1" value="{{u.geoId}}">{{u.naziv}}</option>
+            <option [selected]="ulice?.length > 1"  value="null">Odaberite ulicu...</option>
+            <option *ngFor="let u of ulice as ulice; let c = count" value="{{u.geoId}}">{{u.naziv}}</option>
           </select>
+          <span *ngIf="this.hasErrors('adresaObavijest.ulica')" class="text-danger ml-2 align-middle ">Obavezan odabir</span>
         </div>
         <div class="d-flex form-group">
           <label for="kucniBr">Kućni broj: </label>
           <input name="kucniBr" type="text" formControlName="kucniBr" class="form-control w-50">
         </div>
         <div class="d-flex form-group">
-          <label for="dodatak">Dodatak: </label>
-          <input name="dodatak" type="text" formControlName="dodatak" class="form-control w-50">
+          <label for="dodatak1">Dodatak: </label>
+          <input name="dodatak1" type="text" formControlName="dodatak1" class="form-control w-50">
         </div>
         <div class="d-flex form-group">
           <label for="napomena">Napomena: </label>
@@ -96,27 +108,31 @@
         <div class="d-flex form-group flex-column">
           <label for="opcina">Općina: *</label>
           <select  name="opcina" class="form-control" id="adresaOpcina" formControlName="opcina"  style="width: calc(170px + 50%);">
-            <option [selected]="(opcine$ | async)?.length > 1" value="null">Odaberite općinu...</option>
-            <option *ngFor="let o of (opcine$ | async); let i = index" [selected]="(opcine$ | async)?.length === 1" value="{{o.geoId}}">{{o.naziv}}</option>
+            <option [selected]="opcine?.length > 1 || !opcine" value="null">Odaberite općinu...</option>
+            <option *ngFor="let o of opcine; let i = index" [selected]="opcine?.length === 1" value="{{o.geoId}}">{{o.naziv}}</option>
           </select>
+          <span *ngIf="this.hasErrors('adresaObavijest.opcina')" class="text-danger ml-2 align-middle ">Obavezan odabir</span>
         </div>
         <div class="d-flex form-group flex-column">
           <label for="posta">Pošta: *</label>
           <select name="posta" class="form-control" id="adresaPosta" formControlName="posta" style="width: calc(170px + 50%);">
-            <option [selected]="(poste$ | async)?.length > 1" value="null">Odaberite poštu...</option>
-            <option *ngFor="let p of (poste$ | async); let i = index" [selected]="(poste$ | async)?.length === 1" value="{{p.geoId}}">{{p.naziv}}</option>
+            <option [selected]="poste?.length > 1 || !poste" value="null">Odaberite poštu...</option>
+            <option *ngFor="let p of poste; let i = index" [selected]="poste?.length === 1" value="{{p.geoId}}">{{p.naziv}}</option>
           </select>
+          <span *ngIf="this.hasErrors('adresaObavijest.posta')" class="text-danger ml-2 align-middle ">Obavezan odabir</span>
         </div>
         <div class="d-flex form-group">
           <label for="noAdresa" style="width: fit-content; font-size: small;">Ne mogu pronaći adresu u padajućem izborniku</label>
           <input type="checkbox" formControlName="noAdresa" class="ml-2 mt-1 " >
         </div>
+        <div *ngIf="this.opisna1True" [hidden]="!(ao.get('opisnaAdresa')?.invalid && (ao.get('opisnaAdresa')?.dirty || ao.get('opisnaAdresa')?.touched))" class="alert alert-danger mb-2 mt-2" style="width: calc(170px + 50%);">Obavezan unos opisne adrese!</div>
         <div class="d-flex form-group">
           <label for="opisnaAdresa">Opisna adresa: </label>
           <input name="opisnaAdresa" type="text" formControlName="opisnaAdresa" class="form-control w-50">
+          <span *ngIf="this.hasErrors('adresaObavijest.opisnaAdresa')" class="text-danger ml-2 align-middle ">Obavezan unos</span>
         </div>
       </div>
-      <div class="d-flex flex-column" formGroupName="podaciOLokaciji">
+      <div class="d-flex flex-column" formGroupName="adresaTKSuglasnost">
         <!--Podaci o lokaciji/trasi container-->
         <h5 class="mb-2">Podaci o lokaciji/trasi: *</h5>
         <div class="border-top my-2" style="width: calc(170px + 50%); border-top-color: rgb(200, 206, 218) !important;"></div>
@@ -127,32 +143,36 @@
             <option value="1729">Lokacija</option>
             <option value="1730">Trasa</option>
           </select>
+          <span *ngIf="this.hasErrors('adresaTKSuglasnost.tipSuglasnosti')" class="text-danger ml-2 align-middle ">Obavezan odabir</span>
         </div>
         <div class="d-flex form-group flex-column">
-          <label for="kokc">Naziv KO i KČ(opis): </label>
+          <label for="kokc">Naziv KO i KČ (opis): *</label>
           <input name="kokc" type="text" formControlName="kokc" class="form-control" style="width: calc(170px + 50%);">
+          <span *ngIf="this.hasErrors('adresaTKSuglasnost.kokc')" class="text-danger ml-2 align-middle ">Obavezan unos</span>
         </div>
         <div class="d-flex form-group flex-column">
           <label for="svrha" style="width: fit-content;">Svrha traženja suglasnosti: *</label>
           <select formControlName="svrha" name="svrha" class="form-control" style="width: calc(170px + 50%);" >
-            <option [ngValue]="null">Odaberite svrhu...</option>
+            <option value="null">Odaberite svrhu...</option>
             <option value="2309">Izgradnja</option>
             <option value="2310">Legalizacija</option>
             <option value="2311">Rekonstrukcija</option>
           </select>
+          <span *ngIf="this.hasErrors('adresaTKSuglasnost.svrha')" class="text-danger ml-2 align-middle ">Obavezan odabir</span>
         </div>
         <div class="d-flex form-group flex-column">
           <label for="mjesto">Mjesto: *</label>
           <select formControlName="mjesto" name="mjesto" class="form-control" style="width: calc(170px + 50%);" (change)="onSelectChangeTrasa($event)">
-            <option value="null">Odaberite mjesto...</option>
+            <option [selected]="(trasa_mjesta$ | async)?.length > 1" value="null">Odaberite mjesto...</option>
             <option *ngFor="let m of (trasa_mjesta$ | async); let i = index" value="{{m.geoId}}">{{m.naziv}}</option>
           </select>
+          <span *ngIf="this.hasErrors('adresaTKSuglasnost.mjesto')" class="text-danger ml-2 align-middle ">Obavezan odabir</span>
         </div>
         <div class="d-flex form-group flex-column">
           <label for="ulica">Ulica: *</label>
           <select formControlName="ulica" name="mjesto" class="form-control" style="width: calc(170px + 50%);" >
-            <option [selected]="(trasa_ulice$ | async)?.length > 1" value="null">Odaberite ulicu...</option>
-            <option *ngFor="let u of (trasa_ulice$ | async); let i = index" [selected]="(trasa_ulice$ | async)?.length === 1" value="{{u.geoId}}">{{u.naziv}}</option>
+            <option [selected]="trasa_ulice?.length > 1 || !trasa_ulice" value="null">Odaberite ulicu...</option>
+            <option *ngFor="let u of trasa_ulice; let i = index" [selected]="trasa_ulice?.length === 1" value="{{u.geoId}}">{{u.naziv}}</option>
           </select>
         </div>
         <div class="d-flex form-group">
@@ -170,32 +190,37 @@
         <div class="d-flex form-group flex-column">
           <label for="opcina">Općina: *</label>
           <select  name="opcina" class="form-control" formControlName="opcina" style="width: calc(170px + 50%);">
-            <option [selected]="(trasa_opcine$ | async)?.length > 1" value="null">Odaberite općinu...</option>
-            <option [selected]="(trasa_opcine$ | async)?.length === 1" *ngFor="let o of (trasa_opcine$ | async); let i = index" value="{{o.geoId}}">{{o.naziv}}</option>
+            <option [selected]="trasa_opcine?.length > 1 || !trasa_opcine" value="null">Odaberite općinu...</option>
+            <option [selected]="trasa_opcine?.length === 1" *ngFor="let o of trasa_opcine; let i = index" value="{{o.geoId}}">{{o.naziv}}</option>
           </select>
+          <span *ngIf="this.hasErrors('adresaTKSuglasnost.opcina')" class="text-danger ml-2 align-middle ">Obavezan odabir</span>
         </div>
         <div class="d-flex form-group flex-column">
           <label for="posta">Pošta: *</label>
           <select name="posta" class="form-control" formControlName="posta" style="width: calc(170px + 50%);">
-            <option [selected]="(trasa_poste$ | async)?.length > 1" value="null">Odaberite poštu...</option>
-            <option [selected]="(trasa_poste$ | async)?.length === 1" *ngFor="let p of (trasa_poste$ | async); let i = index" value="{{p.geoId}}">{{p.naziv}}</option>
+            <option [selected]="trasa_poste?.length > 1 || !trasa_poste" value="null">Odaberite poštu...</option>
+            <option [selected]="trasa_poste?.length === 1" *ngFor="let p of trasa_poste; let i = index" value="{{p.geoId}}">{{p.naziv}}</option>
           </select>
+          <span *ngIf="this.hasErrors('adresaTKSuglasnost.posta')" class="text-danger ml-2 align-middle ">Obavezan odabir</span>
         </div>
         <div class="d-flex form-group">
           <label for="noAdresa" style="width: fit-content; font-size: small;">Ne mogu pronaći adresu u padajućem izborniku</label>
           <input type="checkbox" formControlName="noAdresa" class="ml-2 mt-1 " >
         </div>
+        <div *ngIf="this.opisna2True" [hidden]="!(ats.get('opisnaAdresa')?.invalid && (ats.get('opisnaAdresa')?.dirty || ats.get('opisnaAdresa')?.touched))" class="alert alert-danger mb-2 mt-2" style="width: calc(170px + 50%);">Obavezan unos opisne adrese!</div>
         <div class="d-flex form-group">
           <label for="opisnaAdresa">Opisna adresa: </label>
           <input name="opisnaAdresa" type="text" formControlName="opisnaAdresa" class="form-control w-50">
+          <span *ngIf="this.hasErrors('adresaTKSuglasnost.opisnaAdresa')" class="text-danger ml-2 align-middle ">Obavezan unos</span>
         </div>
       </div>
+      <button type="submit">Pošalji</button>
     </form>
   </div>
   <div class="d-flex flex-column justify-self-end " style="max-width: 40%;">
     <!--Info container-->
     <h5 class="p-2 m-2"><b>Info</b></h5>
-    <p>Pod pojmom 'TK Suglasnost' podrazumijeva se dokument kojim se potvrđuje da na lokaciji koja je navedena u Zahtjevu nema podzemnih instalacija koje
+    <p class="text-justify pr-4">Pod pojmom 'TK Suglasnost' podrazumijeva se dokument kojim se potvrđuje da na lokaciji koja je navedena u Zahtjevu nema podzemnih instalacija koje
       su u vlasništvu JP HT d.d. Mostar ili kojim se, u slučaju postojanja TK instalacija, definiraju posebni uvjeti pod kojima se daje suglasnost za obavljanje građevinskih
       radova. Podnositelji Zahtjeva mogu biti domaće ili inozemne fizičke ili pravne osobe ili institucije državne/javne uprave (županije, općine, ministarstva
        i sl.). Zahtjev je valjan ako su u njemu uneseni odgovarajući osobni kontakt podaci (uključujući adresu na koju će biti dostavljena tražena suglasnost i prilozi zahtjeva).

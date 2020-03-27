@@ -1,0 +1,56 @@
+<div class="container d-flex flex-column rounded shadow-sm mb-5 pb-5" style="background-color: rgb(247, 249, 252);">
+  <h3 class="border-bottom border-secondary p-2">Zahtjev za izdavanje TK suglasnosti</h3>
+  <div class="d-flex">
+    <div class="d-flex flex-column flex-grow-1">
+      <h5 class="font-weight-normal p-2 mb-0 mt-3 w-75 ml-2 text-justify"><i>Nakon unosa broja zahtjeva i e-mail adrese navedene u zahtjevu, potrebno je priložiti kopiju i skeniranu kopiju katastarskog plana s prikazom situacije planiranog građevinskog objekta za izdavanje TK suglasnosti.</i></h5>
+      <hr />
+      <form [formGroup]="form" class="ml-3">
+        <div class="d-flex flex-column flex-grow-1" formGroupName="pregledZahtjeva">
+          <h5>Pregled zahtjeva</h5>
+          <div class="border-top my-2 w-75" ></div>
+          <div class="d-flex flex-column form-group">
+            <label for="sporazumId">Sporazum ID: *</label>
+            <input name="sporazumId" formControlName="sporazumId" class="form-control" style="width: calc(170px + 50%)">
+          </div>
+          <div class="d-flex flex-column form-group mb-3">
+            <label for="email">Email: *</label>
+            <input name="email" formControlName="email" class="form-control" style="width: calc(170px + 50%)">
+          </div>
+          <div class="btn btn-info mb-4" (click)="showDetails()">Prikaži detalje</div>
+        </div>
+        <div class="d-flex flex-column flex-grow-1 mt-2" style="min-height: 140px;" >
+          <h5>Detalji sporazuma</h5>
+          <div class="border-top my-2" width="calc(170px + 50%)" ></div>
+          <table class="table table-striped rounded">
+            <tbody>
+              <tr *ngFor="let row of details" >
+                <td scope="row" class="font-weight-bold">{{row['naziv']}}</td>
+                <td class="">{{row['vrijednost']}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="d-flex flex-column flex-grow-1" >
+          <h5>Dokumenti</h5>
+          <div class="border-top my-2" width="calc(170px + 50%)" ></div>
+
+          <div class="btn btn-info mb-4">Preuzmi dokumente</div>
+        </div>
+        <div class="d-flex flex-column flex-grow-1" formGroupName="prilozi">
+          <h5>Prilozi</h5>
+          <div class="border-top my-2 mt-2 mb-3" width="calc(170px + 50%)" ></div>
+
+          <input type="file" formControlName="chooseFiles">
+        </div>
+      </form>
+    </div>
+    <div class="d-flex flex-column justify-self-end" style="max-width: 40%;">
+      <h5 class="p-2 m-2"><b>Info</b></h5>
+      <p class="text-justify pr-4">Pod pojmom 'TK Suglasnost' podrazumijeva se dokument kojim se potvrđuje da na lokaciji koja je navedena u Zahtjevu nema podzemnih instalacija koje
+        su u vlasništvu JP HT d.d. Mostar ili kojim se, u slučaju postojanja TK instalacija, definiraju posebni uvjeti pod kojima se daje suglasnost za obavljanje građevinskih
+        radova. Podnositelji Zahtjeva mogu biti domaće ili inozemne fizičke ili pravne osobe ili institucije državne/javne uprave (županije, općine, ministarstva
+         i sl.). Zahtjev je valjan ako su u njemu uneseni odgovarajući osobni kontakt podaci (uključujući adresu na koju će biti dostavljena tražena suglasnost i prilozi zahtjeva).
+      </p>
+  </div>
+  </div>
+</div>
