@@ -18,12 +18,12 @@ export class PregledZahtjevaService{
     return this.http.get('http://172.22.3.100:32603/tk_suglasnost/api/sporazum?sporazumId=' + sporazumId + '&mail=' + email);
   }
 
-  downloadFiles() {
-
+  downloadFiles(sporazumId) {
+    return this.http.get('http://wsapi.ht.ba/TK_SUGLASNOST/api/DownloadFiles?sporazumId=782678' );
   }
 
-  uploadFiles() {
-
+  uploadFiles(formData) {
+    return this.http.post<any>('http://172.22.3.100:32603/tk_suglasnost/api/UploadFiles', formData);
   }
 
 }

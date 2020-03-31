@@ -33,14 +33,36 @@
         <div class="d-flex flex-column flex-grow-1" >
           <h5>Dokumenti</h5>
           <div class="border-top my-2" width="calc(170px + 50%)" ></div>
+          <div *ngIf="spinner" class="spinner-border m-2 mb-3" role="status"></div>
+          <div class="list-group my-2 mb-3" *ngIf="files">
+            <div *ngFor="let f of files">
+              <a [href]="f['href']" [download]="f['download']" class="text-black"><i class="far fa-file-pdf mr-1"></i>{{f['download']}}</a>
+            </div>
+          </div>
 
-          <div class="btn btn-info mb-4">Preuzmi dokumente</div>
+          <!--<div class="btn btn-info mb-4">Preuzmi dokumente</div> -->
         </div>
         <div class="d-flex flex-column flex-grow-1" formGroupName="prilozi">
           <h5>Prilozi</h5>
           <div class="border-top my-2 mt-2 mb-3" width="calc(170px + 50%)" ></div>
-
-          <input type="file" formControlName="chooseFiles">
+          <table class="table">
+            <thead class="thead-light">
+              <th>Naziv</th>
+              <th>Veličina</th>
+              <th></th>
+            </thead>
+            <tbody *ngIf="files_for_upload">
+              <tr *ngFor="let f of files_for_upload; let i = index">
+                <td>{{f.name}}</td>
+                <td>{{f.size > 1000000 ? math.round(f.size/1024/1024*100)/100 + ' MB' : math.round(f.size/1024*100)/100 + ' kB'}}</td>
+                <td>
+                  <div class="btn btn-danger" style="width: fit-content;" (click)="remove(i)">Ukloni</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <input type="file" multiple formControlName="chooseFiles" (change)="inputChange($event.target.files)">
+          <div class="btn btn-info mb-4 mt-5" (click)="uploadFiles()">Priloži</div>
         </div>
       </form>
     </div>

@@ -25,6 +25,7 @@ import { TabContentComponent } from './tab-content/tab-content.component';
 import { NoviZahtjevComponent } from './Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component';
 import { PregledZahtjevaComponent } from './Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.component';
 import { SharedService } from './Aplikacije/TkSuglasnost/shared.service';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { SharedService } from './Aplikacije/TkSuglasnost/shared.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularFontAwesomeModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: jwtTokenGetter,
