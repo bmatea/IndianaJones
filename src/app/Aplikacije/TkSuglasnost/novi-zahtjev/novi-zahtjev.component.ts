@@ -55,13 +55,13 @@ export class NoviZahtjevComponent implements OnInit {
         prezime: ['', [Validators.required]],
         naziv: ['', []],
         dodatak: ['', []],
-        mjesto: ['', [Validators.required]],
+        mjesto: ['null', [Validators.required]],
         ulica: ['null', [Validators.required]],
         kucniBr: ['', []],
         dodatak1: ['', []],
         napomena: ['', []],
-        opcina: ['', [Validators.required]],
-        posta: ['', [Validators.required]],
+        opcina: ['null', [Validators.required]],
+        posta: ['null', [Validators.required]],
         noAdresa: [false, []],
         opisnaAdresa: [{value: '', disabled: true}, []],
       }),
@@ -159,13 +159,13 @@ export class NoviZahtjevComponent implements OnInit {
   onSelectChange(e) {
       if(e.target.value != "null") {
       this.service.getUlice(e.target.value).subscribe(ulice => {
-        this.ulice = ulice;
+        this.ulice = ulice.sort((a,b) => a.naziv.localeCompare(b.naziv));
         if (ulice.length === 1) {
           this.form.get('adresaObavijest.ulica').setValue(ulice[0].geoId);
         }
       });
       this.service.getOpcine(e.target.value).subscribe(opcine => {
-        this.opcine = opcine;
+        this.opcine = opcine.sort((a,b) => a.naziv.localeCompare(b.naziv));
         if (opcine.length === 1) {
           this.form.get('adresaObavijest.opcina').setValue(opcine[0].geoId);
         }

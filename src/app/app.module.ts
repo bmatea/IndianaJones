@@ -26,6 +26,7 @@ import { NoviZahtjevComponent } from './Aplikacije/TkSuglasnost/novi-zahtjev/nov
 import { PregledZahtjevaComponent } from './Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.component';
 import { SharedService } from './Aplikacije/TkSuglasnost/shared.service';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     TabContentComponent,
     NoviZahtjevComponent,
     PregledZahtjevaComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
