@@ -10,10 +10,12 @@ import { Test1Component } from './stranice/test1/test1.component';
 import { Test2Component } from './stranice/test2/test2.component';
 import { NoviZahtjevComponent } from './Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component';
 import { PregledZahtjevaComponent } from './Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.component';
+import { SimpComponent } from './Aplikacije/SIMP/simp/simp.component';
 
 export const components = {
   'Test1Component': Test1Component,
   'Test2Component': Test2Component,
   'NoviZahtjev': NoviZahtjevComponent,
-  'PregledZahtjeva': PregledZahtjevaComponent
+  'PregledZahtjeva': PregledZahtjevaComponent,
+  'simp': SimpComponent
 };

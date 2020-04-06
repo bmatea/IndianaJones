@@ -27,6 +27,7 @@ import { PregledZahtjevaComponent } from './Aplikacije/TkSuglasnost/pregled-zaht
 import { SharedService } from './Aplikacije/TkSuglasnost/shared.service';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FooterComponent } from './footer/footer.component';
+import { SimpComponent } from './Aplikacije/SIMP/simp/simp.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { FooterComponent } from './footer/footer.component';
     NoviZahtjevComponent,
     PregledZahtjevaComponent,
     FooterComponent,
+    SimpComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +76,8 @@ import { FooterComponent } from './footer/footer.component';
     Test1Component,
     Test2Component,
     NoviZahtjevComponent,
-    PregledZahtjevaComponent
+    PregledZahtjevaComponent,
+    SimpComponent
   ]
 })
 export class AppModule { }
