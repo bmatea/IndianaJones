@@ -28,6 +28,8 @@ import { SharedService } from './Aplikacije/TkSuglasnost/shared.service';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FooterComponent } from './footer/footer.component';
 import { SimpComponent } from './Aplikacije/SIMP/simp/simp.component';
+import { NgxSoapModule } from 'ngx-soap';
+import { ModemInfoModalComponent } from './Aplikacije/SIMP/modem-info-modal/modem-info-modal.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { SimpComponent } from './Aplikacije/SIMP/simp/simp.component';
     PregledZahtjevaComponent,
     FooterComponent,
     SimpComponent,
+    ModemInfoModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,7 @@ import { SimpComponent } from './Aplikacije/SIMP/simp/simp.component';
       }
     }),
     NgbModule,
-
+    NgxSoapModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
@@ -73,6 +76,9 @@ import { SimpComponent } from './Aplikacije/SIMP/simp/simp.component';
   ],
   bootstrap: [AppComponent],
   entryComponents: [
+    ModemInfoModalComponent,
+
+
     Test1Component,
     Test2Component,
     NoviZahtjevComponent,

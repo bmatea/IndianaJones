@@ -1,30 +1,166 @@
-Date : 2020-03-31 14:40:09
-Directory : c:\Users\Matea\Desktop\IndianaJones\src\app\app-menu
-Total : 4 files,  50 codes, 5 comments, 15 blanks, all 70 lines
+Date : 2020-04-08 13:22:56
+Directory : c:\Users\Matea\Desktop\IndianaJones\src
+Total : 114 files,  3046 codes, 163 comments, 530 blanks, all 3739 lines
 
 Languages
 +------------+------------+------------+------------+------------+------------+
 | language   | files      | code       | comment    | blank      | total      |
 +------------+------------+------------+------------+------------+------------+
-| TypeScript |          2 |         38 |          4 |         12 |         54 |
-| HTML       |          1 |         10 |          0 |          1 |         11 |
-| CSS        |          1 |          2 |          1 |          2 |          5 |
+| TypeScript |         82 |      1,853 |        120 |        466 |      2,439 |
+| HTML       |         16 |      1,151 |         30 |         39 |      1,220 |
+| CSS        |         16 |         42 |         13 |         25 |         80 |
 +------------+------------+------------+------------+------------+------------+
 
 Directories
-+---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
-| path                                                                            | files      | code       | comment    | blank      | total      |
-+---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
-| .                                                                               |          4 |         50 |          5 |         15 |         70 |
-+---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                    | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                       |        114 |      3,046 |        163 |        530 |      3,739 |
+| app                                                                                                                     |        107 |      2,996 |         92 |        504 |      3,592 |
+| app\Aplikacije                                                                                                          |         20 |      1,720 |         26 |        159 |      1,905 |
+| app\Aplikacije\SIMP                                                                                                     |          6 |        879 |          2 |         52 |        933 |
+| app\Aplikacije\SIMP\services                                                                                            |          2 |         37 |          1 |         14 |         52 |
+| app\Aplikacije\SIMP\simp                                                                                                |          4 |        842 |          1 |         38 |        881 |
+| app\Aplikacije\TkSuglasnost                                                                                             |         14 |        841 |         24 |        107 |        972 |
+| app\Aplikacije\TkSuglasnost\novi-zahtjev                                                                                |          6 |        570 |         15 |         60 |        645 |
+| app\Aplikacije\TkSuglasnost\pregled-zahtjeva                                                                            |          6 |        247 |          9 |         37 |        293 |
+| app\akitaAuth                                                                                                           |          4 |         76 |          2 |         25 |        103 |
+| app\app-menu                                                                                                            |          4 |         50 |          5 |         15 |         70 |
+| app\application                                                                                                         |          4 |         59 |          5 |         19 |         83 |
+| app\application-content                                                                                                 |          4 |         78 |         35 |         25 |        138 |
+| app\footer                                                                                                              |          4 |         57 |          0 |         17 |         74 |
+| app\interfaces                                                                                                          |          2 |          6 |          0 |          2 |          8 |
+| app\login                                                                                                               |          4 |        125 |          0 |         19 |        144 |
+| app\models                                                                                                              |         14 |        107 |          1 |         34 |        142 |
+| app\navigation                                                                                                          |          4 |         65 |         17 |         16 |         98 |
+| app\permissions                                                                                                         |          4 |         69 |          0 |         21 |         90 |
+| app\protected                                                                                                           |          4 |         37 |          0 |         14 |         51 |
+| app\services                                                                                                            |          8 |        150 |          0 |         46 |        196 |
+| app\stranice                                                                                                            |          8 |         79 |          0 |         26 |        105 |
+| app\stranice\test1                                                                                                      |          4 |         43 |          0 |         13 |         56 |
+| app\stranice\test2                                                                                                      |          4 |         36 |          0 |         13 |         49 |
+| app\tab-content                                                                                                         |          4 |         41 |          0 |         14 |         55 |
+| app\test                                                                                                                |          4 |         32 |          0 |         13 |         45 |
+| environments                                                                                                            |          2 |          6 |         11 |          4 |         21 |
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
 
 Files
-+---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
-| filename                                                                        | language   | code       | comment    | blank      | total      |
-+---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
-| c:\Users\Matea\Desktop\IndianaJones\src\app\app-menu\app-menu.component.css     | CSS        |          2 |          1 |          2 |          5 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\app-menu\app-menu.component.html    | HTML       |         10 |          0 |          1 |         11 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\app-menu\app-menu.component.spec.ts | TypeScript |         20 |          0 |          6 |         26 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\app-menu\app-menu.component.ts      | TypeScript |         18 |          4 |          6 |         28 |
-| Total                                                                           |            |         50 |          5 |         15 |         70 |
-+---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                | language   | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\SIMP\services\mock.service.spec.ts                               | TypeScript |          9 |          0 |          4 |         13 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\SIMP\services\mock.service.ts                                    | TypeScript |         28 |          1 |         10 |         39 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\SIMP\simp\simp.component.css                                     | CSS        |          6 |          1 |          1 |          8 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\SIMP\simp\simp.component.html                                    | HTML       |        719 |          0 |          5 |        724 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\SIMP\simp\simp.component.spec.ts                                 | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\SIMP\simp\simp.component.ts                                      | TypeScript |         97 |          0 |         26 |        123 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\TkSuglasnost\novi-zahtjev\novi-zahtjev.component.css             | CSS        |          3 |          0 |          1 |          4 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\TkSuglasnost\novi-zahtjev\novi-zahtjev.component.html            | HTML       |        222 |          7 |          2 |        231 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\TkSuglasnost\novi-zahtjev\novi-zahtjev.component.spec.ts         | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\TkSuglasnost\novi-zahtjev\novi-zahtjev.component.ts              | TypeScript |        285 |          8 |         38 |        331 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\TkSuglasnost\novi-zahtjev\tk-suglasnost.service.spec.ts          | TypeScript |          9 |          0 |          4 |         13 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\TkSuglasnost\novi-zahtjev\tk-suglasnost.service.ts               | TypeScript |         31 |          0 |          9 |         40 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\TkSuglasnost\pregled-zahtjeva\pregled-zahtjeva.component.css     | CSS        |          3 |          7 |          2 |         12 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\TkSuglasnost\pregled-zahtjeva\pregled-zahtjeva.component.html    | HTML       |         76 |          1 |          2 |         79 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\TkSuglasnost\pregled-zahtjeva\pregled-zahtjeva.component.spec.ts | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\TkSuglasnost\pregled-zahtjeva\pregled-zahtjeva.component.ts      | TypeScript |        117 |          1 |         15 |        133 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\TkSuglasnost\pregled-zahtjeva\pregled-zahtjeva.service.spec.ts   | TypeScript |          9 |          0 |          4 |         13 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\TkSuglasnost\pregled-zahtjeva\pregled-zahtjeva.service.ts        | TypeScript |         22 |          0 |          8 |         30 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\TkSuglasnost\shared.service.spec.ts                              | TypeScript |          9 |          0 |          4 |         13 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\TkSuglasnost\shared.service.ts                                   | TypeScript |         15 |          0 |          6 |         21 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\akitaAuth\auth.guard.spec.ts                                                | TypeScript |         12 |          0 |          4 |         16 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\akitaAuth\auth.guard.ts                                                     | TypeScript |         18 |          1 |          5 |         24 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\akitaAuth\session.query.ts                                                  | TypeScript |         17 |          1 |          7 |         25 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\akitaAuth\session.store.ts                                                  | TypeScript |         29 |          0 |          9 |         38 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\app-menu\app-menu.component.css                                             | CSS        |          2 |          1 |          2 |          5 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\app-menu\app-menu.component.html                                            | HTML       |         10 |          0 |          1 |         11 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\app-menu\app-menu.component.spec.ts                                         | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\app-menu\app-menu.component.ts                                              | TypeScript |         18 |          4 |          6 |         28 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\app-routing.module.ts                                                       | TypeScript |         34 |          0 |          4 |         38 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\app.component.css                                                           | CSS        |          0 |          0 |          2 |          2 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\app.component.html                                                          | HTML       |          2 |          0 |          1 |          3 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\app.component.spec.ts                                                       | TypeScript |         31 |          0 |          5 |         36 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\app.component.ts                                                            | TypeScript |         27 |          0 |          5 |         32 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\app.module.ts                                                               | TypeScript |         82 |          0 |          6 |         88 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\application-content\application-content.component.css                       | CSS        |          3 |          3 |          2 |          8 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\application-content\application-content.component.html                      | HTML       |         17 |          6 |          6 |         29 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\application-content\application-content.component.spec.ts                   | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\application-content\application-content.component.ts                        | TypeScript |         38 |         26 |         11 |         75 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\application\application.component.css                                       | CSS        |         11 |          0 |          3 |         14 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\application\application.component.html                                      | HTML       |          3 |          0 |          4 |          7 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\application\application.component.spec.ts                                   | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\application\application.component.ts                                        | TypeScript |         25 |          5 |          6 |         36 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\auth-interceptor.spec.ts                                                    | TypeScript |          6 |          0 |          2 |          8 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\auth-interceptor.ts                                                         | TypeScript |         29 |          1 |          6 |         36 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\component.directive.spec.ts                                                 | TypeScript |          7 |          0 |          2 |          9 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\component.directive.ts                                                      | TypeScript |          7 |          0 |          4 |         11 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\componentMap.ts                                                             | TypeScript |         20 |          0 |          2 |         22 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\footer\footer.component.css                                                 | CSS        |          9 |          0 |          3 |         12 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\footer\footer.component.html                                                | HTML       |         17 |          0 |          3 |         20 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\footer\footer.component.spec.ts                                             | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\footer\footer.component.ts                                                  | TypeScript |         11 |          0 |          5 |         16 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\interfaces\adapter.ts                                                       | TypeScript |          3 |          0 |          1 |          4 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\interfaces\stranica-component.ts                                            | TypeScript |          3 |          0 |          1 |          4 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\login\login.component.css                                                   | CSS        |          0 |          0 |          1 |          1 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\login\login.component.html                                                  | HTML       |         35 |          0 |          5 |         40 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\login\login.component.spec.ts                                               | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\login\login.component.ts                                                    | TypeScript |         70 |          0 |          7 |         77 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\models\adapter.spec.ts                                                      | TypeScript |          6 |          0 |          2 |          8 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\models\adapter.ts                                                           | TypeScript |         11 |          0 |          2 |         13 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\models\application.spec.ts                                                  | TypeScript |          6 |          0 |          2 |          8 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\models\application.ts                                                       | TypeScript |          8 |          0 |          3 |         11 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\models\component-item.spec.ts                                               | TypeScript |          6 |          0 |          2 |          8 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\models\component-item.ts                                                    | TypeScript |          4 |          0 |          2 |          6 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\models\modul-adapter.spec.ts                                                | TypeScript |          6 |          0 |          2 |          8 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\models\modul-adapter.ts                                                     | TypeScript |         11 |          0 |          3 |         14 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\models\modul.spec.ts                                                        | TypeScript |          6 |          0 |          2 |          8 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\models\modul.ts                                                             | TypeScript |          8 |          0 |          3 |         11 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\models\stranica.spec.ts                                                     | TypeScript |          6 |          0 |          2 |          8 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\models\stranica.ts                                                          | TypeScript |          8 |          0 |          3 |         11 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\models\stranice-adapter.spec.ts                                             | TypeScript |          6 |          0 |          2 |          8 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\models\stranice-adapter.ts                                                  | TypeScript |         15 |          1 |          4 |         20 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\navigation\navigation.component.css                                         | CSS        |          3 |          0 |          1 |          4 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\navigation\navigation.component.html                                        | HTML       |         20 |         16 |          3 |         39 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\navigation\navigation.component.spec.ts                                     | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\navigation\navigation.component.ts                                          | TypeScript |         22 |          1 |          6 |         29 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\permissions\has-permission.directive.spec.ts                                | TypeScript |          7 |          0 |          2 |          9 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\permissions\has-permission.directive.ts                                     | TypeScript |         26 |          0 |          7 |         33 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\permissions\permission.query.ts                                             | TypeScript |         17 |          0 |          6 |         23 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\permissions\permission.store.ts                                             | TypeScript |         19 |          0 |          6 |         25 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\protected\protected.component.css                                           | CSS        |          0 |          0 |          1 |          1 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\protected\protected.component.html                                          | HTML       |          2 |          0 |          1 |          3 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\protected\protected.component.spec.ts                                       | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\protected\protected.component.ts                                            | TypeScript |         15 |          0 |          6 |         21 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\services\local-storage.service.spec.ts                                      | TypeScript |          9 |          0 |          4 |         13 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\services\local-storage.service.ts                                           | TypeScript |         23 |          0 |          9 |         32 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\services\session-data.service.spec.ts                                       | TypeScript |          9 |          0 |          4 |         13 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\services\session-data.service.ts                                            | TypeScript |         28 |          0 |          6 |         34 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\services\session.service.spec.ts                                            | TypeScript |          9 |          0 |          4 |         13 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\services\session.service.ts                                                 | TypeScript |         18 |          0 |          7 |         25 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\services\user-service.service.spec.ts                                       | TypeScript |          9 |          0 |          4 |         13 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\services\user-service.service.ts                                            | TypeScript |         45 |          0 |          8 |         53 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\stranice\test1\test1.component.css                                          | CSS        |          0 |          0 |          1 |          1 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\stranice\test1\test1.component.html                                         | HTML       |          9 |          0 |          1 |         10 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\stranice\test1\test1.component.spec.ts                                      | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\stranice\test1\test1.component.ts                                           | TypeScript |         14 |          0 |          5 |         19 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\stranice\test2\test2.component.css                                          | CSS        |          0 |          0 |          1 |          1 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\stranice\test2\test2.component.html                                         | HTML       |          3 |          0 |          1 |          4 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\stranice\test2\test2.component.spec.ts                                      | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\stranice\test2\test2.component.ts                                           | TypeScript |         13 |          0 |          5 |         18 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\tab-content\tab-content.component.css                                       | CSS        |          0 |          0 |          1 |          1 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\tab-content\tab-content.component.html                                      | HTML       |          1 |          0 |          1 |          2 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\tab-content\tab-content.component.spec.ts                                   | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\tab-content\tab-content.component.ts                                        | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\test\test.component.css                                                     | CSS        |          0 |          0 |          1 |          1 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\test\test.component.html                                                    | HTML       |          1 |          0 |          1 |          2 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\test\test.component.spec.ts                                                 | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\test\test.component.ts                                                      | TypeScript |         11 |          0 |          5 |         16 |
+| c:\Users\Matea\Desktop\IndianaJones\src\environments\environment.prod.ts                                                | TypeScript |          3 |          0 |          1 |          4 |
+| c:\Users\Matea\Desktop\IndianaJones\src\environments\environment.ts                                                     | TypeScript |          3 |         11 |          3 |         17 |
+| c:\Users\Matea\Desktop\IndianaJones\src\index.html                                                                      | HTML       |         14 |          0 |          2 |         16 |
+| c:\Users\Matea\Desktop\IndianaJones\src\main.ts                                                                         | TypeScript |         14 |          0 |          6 |         20 |
+| c:\Users\Matea\Desktop\IndianaJones\src\polyfills.ts                                                                    | TypeScript |          1 |         55 |          8 |         64 |
+| c:\Users\Matea\Desktop\IndianaJones\src\styles.css                                                                      | CSS        |          2 |          1 |          2 |          5 |
+| c:\Users\Matea\Desktop\IndianaJones\src\test.ts                                                                         | TypeScript |         13 |          4 |          4 |         21 |
+| Total                                                                                                                   |            |      3,046 |        163 |        530 |      3,739 |
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

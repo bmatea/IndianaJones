@@ -13,7 +13,7 @@ export class NavigationComponent implements OnInit {
   isLoggedIn: boolean;
   isLoggedin: Observable<boolean>;
 
-  constructor(private query: SessionQuery, private service: SessionService, private router: Router, private route: ActivatedRoute) { }
+  constructor(public query: SessionQuery, private service: SessionService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     //this.isLoggedin = this.query.isLoggedIn$

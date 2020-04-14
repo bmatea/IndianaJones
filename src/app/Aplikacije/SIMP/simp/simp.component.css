@@ -1,3 +1,11 @@
 .hoverable:hover {
-  fill: azure !important;
+  cursor: pointer;
+}
+.hoverable:active {
+  fill: beige !important;
+}
+
+div.disabled {
+  pointer-events: none !important;
+  opacity: 0.2;
 }

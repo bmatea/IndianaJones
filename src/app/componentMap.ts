@@ -17,5 +17,5 @@ export const components = {
   'Test2Component': Test2Component,
   'NoviZahtjev': NoviZahtjevComponent,
   'PregledZahtjeva': PregledZahtjevaComponent,
-  'simp': SimpComponent
+  'sinp': SimpComponent
 };

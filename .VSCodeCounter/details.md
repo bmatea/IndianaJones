@@ -1,19 +1,129 @@
 # Details
 
-Date : 2020-03-31 14:40:09
+Date : 2020-04-08 13:22:56
 
-Directory c:\Users\Matea\Desktop\IndianaJones\src\app\app-menu
+Directory c:\Users\Matea\Desktop\IndianaJones\src
 
-Total : 4 files,  50 codes, 5 comments, 15 blanks, all 70 lines
+Total : 114 files,  3046 codes, 163 comments, 530 blanks, all 3739 lines
 
 [summary](results.md)
 
 ## Files
 | filename | language | code | comment | blank | total |
 | :--- | :--- | ---: | ---: | ---: | ---: |
+| [src/app/Aplikacije/SIMP/services/mock.service.spec.ts](/src/app/Aplikacije/SIMP/services/mock.service.spec.ts) | TypeScript | 9 | 0 | 4 | 13 |
+| [src/app/Aplikacije/SIMP/services/mock.service.ts](/src/app/Aplikacije/SIMP/services/mock.service.ts) | TypeScript | 28 | 1 | 10 | 39 |
+| [src/app/Aplikacije/SIMP/simp/simp.component.css](/src/app/Aplikacije/SIMP/simp/simp.component.css) | CSS | 6 | 1 | 1 | 8 |
+| [src/app/Aplikacije/SIMP/simp/simp.component.html](/src/app/Aplikacije/SIMP/simp/simp.component.html) | HTML | 719 | 0 | 5 | 724 |
+| [src/app/Aplikacije/SIMP/simp/simp.component.spec.ts](/src/app/Aplikacije/SIMP/simp/simp.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/Aplikacije/SIMP/simp/simp.component.ts](/src/app/Aplikacije/SIMP/simp/simp.component.ts) | TypeScript | 97 | 0 | 26 | 123 |
+| [src/app/Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component.css](/src/app/Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component.css) | CSS | 3 | 0 | 1 | 4 |
+| [src/app/Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component.html](/src/app/Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component.html) | HTML | 222 | 7 | 2 | 231 |
+| [src/app/Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component.spec.ts](/src/app/Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component.ts](/src/app/Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component.ts) | TypeScript | 285 | 8 | 38 | 331 |
+| [src/app/Aplikacije/TkSuglasnost/novi-zahtjev/tk-suglasnost.service.spec.ts](/src/app/Aplikacije/TkSuglasnost/novi-zahtjev/tk-suglasnost.service.spec.ts) | TypeScript | 9 | 0 | 4 | 13 |
+| [src/app/Aplikacije/TkSuglasnost/novi-zahtjev/tk-suglasnost.service.ts](/src/app/Aplikacije/TkSuglasnost/novi-zahtjev/tk-suglasnost.service.ts) | TypeScript | 31 | 0 | 9 | 40 |
+| [src/app/Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.component.css](/src/app/Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.component.css) | CSS | 3 | 7 | 2 | 12 |
+| [src/app/Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.component.html](/src/app/Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.component.html) | HTML | 76 | 1 | 2 | 79 |
+| [src/app/Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.component.spec.ts](/src/app/Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.component.ts](/src/app/Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.component.ts) | TypeScript | 117 | 1 | 15 | 133 |
+| [src/app/Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.service.spec.ts](/src/app/Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.service.spec.ts) | TypeScript | 9 | 0 | 4 | 13 |
+| [src/app/Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.service.ts](/src/app/Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.service.ts) | TypeScript | 22 | 0 | 8 | 30 |
+| [src/app/Aplikacije/TkSuglasnost/shared.service.spec.ts](/src/app/Aplikacije/TkSuglasnost/shared.service.spec.ts) | TypeScript | 9 | 0 | 4 | 13 |
+| [src/app/Aplikacije/TkSuglasnost/shared.service.ts](/src/app/Aplikacije/TkSuglasnost/shared.service.ts) | TypeScript | 15 | 0 | 6 | 21 |
+| [src/app/akitaAuth/auth.guard.spec.ts](/src/app/akitaAuth/auth.guard.spec.ts) | TypeScript | 12 | 0 | 4 | 16 |
+| [src/app/akitaAuth/auth.guard.ts](/src/app/akitaAuth/auth.guard.ts) | TypeScript | 18 | 1 | 5 | 24 |
+| [src/app/akitaAuth/session.query.ts](/src/app/akitaAuth/session.query.ts) | TypeScript | 17 | 1 | 7 | 25 |
+| [src/app/akitaAuth/session.store.ts](/src/app/akitaAuth/session.store.ts) | TypeScript | 29 | 0 | 9 | 38 |
 | [src/app/app-menu/app-menu.component.css](/src/app/app-menu/app-menu.component.css) | CSS | 2 | 1 | 2 | 5 |
 | [src/app/app-menu/app-menu.component.html](/src/app/app-menu/app-menu.component.html) | HTML | 10 | 0 | 1 | 11 |
 | [src/app/app-menu/app-menu.component.spec.ts](/src/app/app-menu/app-menu.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
 | [src/app/app-menu/app-menu.component.ts](/src/app/app-menu/app-menu.component.ts) | TypeScript | 18 | 4 | 6 | 28 |
+| [src/app/app-routing.module.ts](/src/app/app-routing.module.ts) | TypeScript | 34 | 0 | 4 | 38 |
+| [src/app/app.component.css](/src/app/app.component.css) | CSS | 0 | 0 | 2 | 2 |
+| [src/app/app.component.html](/src/app/app.component.html) | HTML | 2 | 0 | 1 | 3 |
+| [src/app/app.component.spec.ts](/src/app/app.component.spec.ts) | TypeScript | 31 | 0 | 5 | 36 |
+| [src/app/app.component.ts](/src/app/app.component.ts) | TypeScript | 27 | 0 | 5 | 32 |
+| [src/app/app.module.ts](/src/app/app.module.ts) | TypeScript | 82 | 0 | 6 | 88 |
+| [src/app/application-content/application-content.component.css](/src/app/application-content/application-content.component.css) | CSS | 3 | 3 | 2 | 8 |
+| [src/app/application-content/application-content.component.html](/src/app/application-content/application-content.component.html) | HTML | 17 | 6 | 6 | 29 |
+| [src/app/application-content/application-content.component.spec.ts](/src/app/application-content/application-content.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/application-content/application-content.component.ts](/src/app/application-content/application-content.component.ts) | TypeScript | 38 | 26 | 11 | 75 |
+| [src/app/application/application.component.css](/src/app/application/application.component.css) | CSS | 11 | 0 | 3 | 14 |
+| [src/app/application/application.component.html](/src/app/application/application.component.html) | HTML | 3 | 0 | 4 | 7 |
+| [src/app/application/application.component.spec.ts](/src/app/application/application.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/application/application.component.ts](/src/app/application/application.component.ts) | TypeScript | 25 | 5 | 6 | 36 |
+| [src/app/auth-interceptor.spec.ts](/src/app/auth-interceptor.spec.ts) | TypeScript | 6 | 0 | 2 | 8 |
+| [src/app/auth-interceptor.ts](/src/app/auth-interceptor.ts) | TypeScript | 29 | 1 | 6 | 36 |
+| [src/app/component.directive.spec.ts](/src/app/component.directive.spec.ts) | TypeScript | 7 | 0 | 2 | 9 |
+| [src/app/component.directive.ts](/src/app/component.directive.ts) | TypeScript | 7 | 0 | 4 | 11 |
+| [src/app/componentMap.ts](/src/app/componentMap.ts) | TypeScript | 20 | 0 | 2 | 22 |
+| [src/app/footer/footer.component.css](/src/app/footer/footer.component.css) | CSS | 9 | 0 | 3 | 12 |
+| [src/app/footer/footer.component.html](/src/app/footer/footer.component.html) | HTML | 17 | 0 | 3 | 20 |
+| [src/app/footer/footer.component.spec.ts](/src/app/footer/footer.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/footer/footer.component.ts](/src/app/footer/footer.component.ts) | TypeScript | 11 | 0 | 5 | 16 |
+| [src/app/interfaces/adapter.ts](/src/app/interfaces/adapter.ts) | TypeScript | 3 | 0 | 1 | 4 |
+| [src/app/interfaces/stranica-component.ts](/src/app/interfaces/stranica-component.ts) | TypeScript | 3 | 0 | 1 | 4 |
+| [src/app/login/login.component.css](/src/app/login/login.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [src/app/login/login.component.html](/src/app/login/login.component.html) | HTML | 35 | 0 | 5 | 40 |
+| [src/app/login/login.component.spec.ts](/src/app/login/login.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/login/login.component.ts](/src/app/login/login.component.ts) | TypeScript | 70 | 0 | 7 | 77 |
+| [src/app/models/adapter.spec.ts](/src/app/models/adapter.spec.ts) | TypeScript | 6 | 0 | 2 | 8 |
+| [src/app/models/adapter.ts](/src/app/models/adapter.ts) | TypeScript | 11 | 0 | 2 | 13 |
+| [src/app/models/application.spec.ts](/src/app/models/application.spec.ts) | TypeScript | 6 | 0 | 2 | 8 |
+| [src/app/models/application.ts](/src/app/models/application.ts) | TypeScript | 8 | 0 | 3 | 11 |
+| [src/app/models/component-item.spec.ts](/src/app/models/component-item.spec.ts) | TypeScript | 6 | 0 | 2 | 8 |
+| [src/app/models/component-item.ts](/src/app/models/component-item.ts) | TypeScript | 4 | 0 | 2 | 6 |
+| [src/app/models/modul-adapter.spec.ts](/src/app/models/modul-adapter.spec.ts) | TypeScript | 6 | 0 | 2 | 8 |
+| [src/app/models/modul-adapter.ts](/src/app/models/modul-adapter.ts) | TypeScript | 11 | 0 | 3 | 14 |
+| [src/app/models/modul.spec.ts](/src/app/models/modul.spec.ts) | TypeScript | 6 | 0 | 2 | 8 |
+| [src/app/models/modul.ts](/src/app/models/modul.ts) | TypeScript | 8 | 0 | 3 | 11 |
+| [src/app/models/stranica.spec.ts](/src/app/models/stranica.spec.ts) | TypeScript | 6 | 0 | 2 | 8 |
+| [src/app/models/stranica.ts](/src/app/models/stranica.ts) | TypeScript | 8 | 0 | 3 | 11 |
+| [src/app/models/stranice-adapter.spec.ts](/src/app/models/stranice-adapter.spec.ts) | TypeScript | 6 | 0 | 2 | 8 |
+| [src/app/models/stranice-adapter.ts](/src/app/models/stranice-adapter.ts) | TypeScript | 15 | 1 | 4 | 20 |
+| [src/app/navigation/navigation.component.css](/src/app/navigation/navigation.component.css) | CSS | 3 | 0 | 1 | 4 |
+| [src/app/navigation/navigation.component.html](/src/app/navigation/navigation.component.html) | HTML | 20 | 16 | 3 | 39 |
+| [src/app/navigation/navigation.component.spec.ts](/src/app/navigation/navigation.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/navigation/navigation.component.ts](/src/app/navigation/navigation.component.ts) | TypeScript | 22 | 1 | 6 | 29 |
+| [src/app/permissions/has-permission.directive.spec.ts](/src/app/permissions/has-permission.directive.spec.ts) | TypeScript | 7 | 0 | 2 | 9 |
+| [src/app/permissions/has-permission.directive.ts](/src/app/permissions/has-permission.directive.ts) | TypeScript | 26 | 0 | 7 | 33 |
+| [src/app/permissions/permission.query.ts](/src/app/permissions/permission.query.ts) | TypeScript | 17 | 0 | 6 | 23 |
+| [src/app/permissions/permission.store.ts](/src/app/permissions/permission.store.ts) | TypeScript | 19 | 0 | 6 | 25 |
+| [src/app/protected/protected.component.css](/src/app/protected/protected.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [src/app/protected/protected.component.html](/src/app/protected/protected.component.html) | HTML | 2 | 0 | 1 | 3 |
+| [src/app/protected/protected.component.spec.ts](/src/app/protected/protected.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/protected/protected.component.ts](/src/app/protected/protected.component.ts) | TypeScript | 15 | 0 | 6 | 21 |
+| [src/app/services/local-storage.service.spec.ts](/src/app/services/local-storage.service.spec.ts) | TypeScript | 9 | 0 | 4 | 13 |
+| [src/app/services/local-storage.service.ts](/src/app/services/local-storage.service.ts) | TypeScript | 23 | 0 | 9 | 32 |
+| [src/app/services/session-data.service.spec.ts](/src/app/services/session-data.service.spec.ts) | TypeScript | 9 | 0 | 4 | 13 |
+| [src/app/services/session-data.service.ts](/src/app/services/session-data.service.ts) | TypeScript | 28 | 0 | 6 | 34 |
+| [src/app/services/session.service.spec.ts](/src/app/services/session.service.spec.ts) | TypeScript | 9 | 0 | 4 | 13 |
+| [src/app/services/session.service.ts](/src/app/services/session.service.ts) | TypeScript | 18 | 0 | 7 | 25 |
+| [src/app/services/user-service.service.spec.ts](/src/app/services/user-service.service.spec.ts) | TypeScript | 9 | 0 | 4 | 13 |
+| [src/app/services/user-service.service.ts](/src/app/services/user-service.service.ts) | TypeScript | 45 | 0 | 8 | 53 |
+| [src/app/stranice/test1/test1.component.css](/src/app/stranice/test1/test1.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [src/app/stranice/test1/test1.component.html](/src/app/stranice/test1/test1.component.html) | HTML | 9 | 0 | 1 | 10 |
+| [src/app/stranice/test1/test1.component.spec.ts](/src/app/stranice/test1/test1.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/stranice/test1/test1.component.ts](/src/app/stranice/test1/test1.component.ts) | TypeScript | 14 | 0 | 5 | 19 |
+| [src/app/stranice/test2/test2.component.css](/src/app/stranice/test2/test2.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [src/app/stranice/test2/test2.component.html](/src/app/stranice/test2/test2.component.html) | HTML | 3 | 0 | 1 | 4 |
+| [src/app/stranice/test2/test2.component.spec.ts](/src/app/stranice/test2/test2.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/stranice/test2/test2.component.ts](/src/app/stranice/test2/test2.component.ts) | TypeScript | 13 | 0 | 5 | 18 |
+| [src/app/tab-content/tab-content.component.css](/src/app/tab-content/tab-content.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [src/app/tab-content/tab-content.component.html](/src/app/tab-content/tab-content.component.html) | HTML | 1 | 0 | 1 | 2 |
+| [src/app/tab-content/tab-content.component.spec.ts](/src/app/tab-content/tab-content.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/tab-content/tab-content.component.ts](/src/app/tab-content/tab-content.component.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/test/test.component.css](/src/app/test/test.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [src/app/test/test.component.html](/src/app/test/test.component.html) | HTML | 1 | 0 | 1 | 2 |
+| [src/app/test/test.component.spec.ts](/src/app/test/test.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/test/test.component.ts](/src/app/test/test.component.ts) | TypeScript | 11 | 0 | 5 | 16 |
+| [src/environments/environment.prod.ts](/src/environments/environment.prod.ts) | TypeScript | 3 | 0 | 1 | 4 |
+| [src/environments/environment.ts](/src/environments/environment.ts) | TypeScript | 3 | 11 | 3 | 17 |
+| [src/index.html](/src/index.html) | HTML | 14 | 0 | 2 | 16 |
+| [src/main.ts](/src/main.ts) | TypeScript | 14 | 0 | 6 | 20 |
+| [src/polyfills.ts](/src/polyfills.ts) | TypeScript | 1 | 55 | 8 | 64 |
+| [src/styles.css](/src/styles.css) | CSS | 2 | 1 | 2 | 5 |
+| [src/test.ts](/src/test.ts) | TypeScript | 13 | 4 | 4 | 21 |
 
 [summary](results.md)

@@ -1,0 +1,52 @@
+<div class="p-2 rounded shadow-sm border">
+  <div class="modal-header">
+    <h4 class="modal-title">MODEM info</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">x</button>
+  </div>
+  <div class="modal-body">
+    <table class="table">
+      <tbody>
+        <tr>
+          <th>Aktivan</th>
+          <td>{{modemInfo['activated']}}</td>
+        </tr>
+        <tr>
+          <th>Naziv korisnika</th>
+          <td>{{modemInfo['customer_name']}}</td>
+        </tr>
+        <tr>
+          <th>Dslam pozicija</th>
+          <td>{{modemInfo['uredjaj_f_s_port']}}</td>
+        </tr>
+        <tr>
+          <th>Username</th>
+          <td>{{modemInfo['pppoe_username']}}</td>
+        </tr>
+        <tr>
+          <th>AssetId</th>
+          <td>{{modemInfo['asset_id']}}</td>
+        </tr>
+        <tr>
+          <th>Bridge mode</th>
+          <td>{{modemInfo['bridgemode']}}</td>
+        </tr>
+        <tr>
+          <th>WiFi enabled</th>
+          <td>{{modemInfo['wifi_enabled']}}</td>
+        </tr>
+        <tr>
+          <th>DHCP black-listed</th>
+          <td>{{modemInfo['dhcp_black_listed']}}</td>
+        </tr>
+        <tr>
+          <th>Device SN</th>
+          <td>{{modemInfo['activated_device_sn']}}</td>
+        </tr>
+        <tr>
+          <th>Device class</th>
+          <td>{{modemInfo['activated_device_class']}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
