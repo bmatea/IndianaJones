@@ -6,7 +6,7 @@ import { ModemInfoModalComponent } from '../modem-info-modal/modem-info-modal.co
 import { isPrimitive } from 'util';
 
 @Component({
-  selector: 'app-simp',
+  selector: 'app-simp.w-100',
   templateUrl: './simp.component.html',
   styleUrls: ['./simp.component.css']
 })
@@ -90,6 +90,7 @@ export class SimpComponent implements OnInit, AfterViewInit {
 
   constructor(private service: MockService, private fb: FormBuilder, private modalService: NgbModal) {
     this.form = this.fb.group({
+      tel: ['', []],
       adsl_username: ['', []],
       iptv_username: ['', []]
     });
@@ -125,21 +126,33 @@ export class SimpComponent implements OnInit, AfterViewInit {
   }
 
   updateDiagram() {
+    this.telefon = this.form.get('tel').value;
     this.adsl_username = this.form.get('adsl_username').value;
     this.prikljucak_id = this.form.get('iptv_username').value;
 
     //kako se provjerava da li su username i id vazeci??
-    if (this.adsl_username !== '' && this.iptv_username !== '') {
+    if (this.adsl_username !== '' || this.iptv_username !== '' || this.telefon !== '') {
       this.podaciValid = true;
       this.disabled = false;
 
-      this.testTelService();
-      this.testDslam('adsl_username', this.adsl_username);
-      this.checkAcsAvailability(this.adsl_username, this.iptv_username);
-      this.getAcsInfo(this.adsl_username, this.iptv_username);
-      this.getDslamInfo(this.adsl_username, this.iptv_username);
-      this.getProxyQuality();
-      this.getLineLength(this.adsl_username, this.iptv_username);
+      const type = this.form.get('tel').value !== '' ? 'tel' : (this.form.get('adsl_username').value !== '') ? 'adsl_username' : 'iptv_username';
+      const data = (type === 'tel') ? this.form.get('tel').value : (type === 'adsl_username') ? this.form.get('adsl_username').value : this.form.get('iptv_username').value;
+      this.service.getPrikId(type, data).subscribe(prik => {
+        this.service.getData(prik['prikljucakId']).subscribe(data => {
+          console.log(data[2]['oznaka']);
+          this.telefon = data[0]['oznaka'];
+          this.adsl_username = data[1]['oznaka'];
+          this.iptv_username = data[2]['oznaka'];
+
+          this.testTelService();
+          this.testDslam('adsl_username', this.adsl_username);
+          this.checkAcsAvailability(this.adsl_username, this.iptv_username);
+          this.getAcsInfo(this.adsl_username, this.iptv_username);
+          this.getDslamInfo(this.adsl_username, this.iptv_username);
+          this.getProxyQuality();
+          this.getLineLength(this.adsl_username, this.iptv_username);
+        });
+      });
 
     } else {
       this.podaciValid = false;
@@ -157,7 +170,6 @@ export class SimpComponent implements OnInit, AfterViewInit {
         if (res['status'] === 'Normal') {
           this.telefonFill = this.colors.aktivno;
           this.telefonStrokeStyle = this.defaultStrokeStyle;
-          this.telefon = res['phoneNumber'];
         } else {
           this.telefonStrokeStyle = this.strokeDasharray;
         }
@@ -245,6 +257,7 @@ export class SimpComponent implements OnInit, AfterViewInit {
         } else {
           this.iptvFill = this.colors.neaktivno;
         }
+        this.service.getIp(iptv_username).subscribe(data => this.stb1Ip = data['tempIpAdresa']);
         this.internetFill = services.includes('INTERNET') ? this.colors.aktivno : this.colors.neaktivno; //TODO pozvoi metodu i dohvati eth i atm status
         this.voipFill = services.includes('VOIP') ? this.colors.aktivno : this.colors.neaktivno;
         this.acsFill = services.includes('MANAGEMENT') ? this.colors.aktivno : this.colors.neaktivno;

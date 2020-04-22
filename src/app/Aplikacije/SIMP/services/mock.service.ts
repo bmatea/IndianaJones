@@ -17,19 +17,39 @@ export class MockService {
 
   }
 
+  getData(prikId) {
+    return this.http.get('http://localhost:8079/api/getUserData/' + prikId);
+  }
+
+  getPrikId(dataType, data) {
+    if (dataType === 'tel') {
+      return this.http.get('http://localhost:8079/api/getPrikIdByTel/' + data);
+    } else if (dataType === 'adsl_username') {
+      return this.http.get('http://localhost:8079/api/getPrikIdByAdsl/' + data);
+    } else if (dataType === 'iptv_username') {
+      return this.http.get('http://localhost:8079/api/getPrikIdByIptv/' + data);
+    } else {
+      return of("Error");
+    }
+  }
+
+  getIp(iptv) {
+    return this.http.get('http://localhost:8078/api/getIp/' + iptv);
+  }
+
   getMsanTelPort() {
     //koji parametri se salju za dobit port?
     return of(46);
   }
 
-  checkTelephone(port): Observable<object> {
+  checkTelephone(port) {
     //zovi servis i proslijedi mu port
     const obj = {
       status: "Normal",
-      phoneNumber: "37823412231",
       customerName: "name"
     };
     return of(obj);
+
   }
 
   checkDslam(username_type, username) {

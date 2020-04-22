@@ -7,7 +7,7 @@ import { ThrowStmt } from '@angular/compiler';
 import { SharedService } from '../shared.service';
 
 @Component({
-  selector: 'app-novi-zahtjev',
+  selector: 'app-novi-zahtjev.w-100',
   templateUrl: './novi-zahtjev.component.html',
   styleUrls: ['./novi-zahtjev.component.css']
 })

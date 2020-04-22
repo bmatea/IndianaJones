@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,6 +31,15 @@ import { FooterComponent } from './footer/footer.component';
 import { SimpComponent } from './Aplikacije/SIMP/simp/simp.component';
 import { NgxSoapModule } from 'ngx-soap';
 import { ModemInfoModalComponent } from './Aplikacije/SIMP/modem-info-modal/modem-info-modal.component';
+import { AdminComponent } from './Aplikacije/Admin/admin/admin.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { TableModule } from 'primeng/table';
+import { PaginatorModule } from 'primeng/paginator';
+import { DialogModule } from 'primeng/dialog';
+import { AddAppToUserModalComponent } from './Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component';
+import { AddAplikacijaModalComponent } from './Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component';
+import { AddStrToAppModalComponent } from './Aplikacije/Admin/add-str-to-app-modal/add-str-to-app-modal.component';
+import { AddStranicaModalComponent } from './Aplikacije/Admin/add-stranica-modal/add-stranica-modal.component';
 
 @NgModule({
   declarations: [
@@ -51,9 +61,15 @@ import { ModemInfoModalComponent } from './Aplikacije/SIMP/modem-info-modal/mode
     FooterComponent,
     SimpComponent,
     ModemInfoModalComponent,
+    AdminComponent,
+    AddAppToUserModalComponent,
+    AddAplikacijaModalComponent,
+    AddStrToAppModalComponent,
+    AddStranicaModalComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
@@ -67,7 +83,10 @@ import { ModemInfoModalComponent } from './Aplikacije/SIMP/modem-info-modal/mode
       }
     }),
     NgbModule,
-    NgxSoapModule
+    NgxSoapModule,
+    NgxDatatableModule,
+    TableModule,
+    DialogModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
@@ -77,13 +96,17 @@ import { ModemInfoModalComponent } from './Aplikacije/SIMP/modem-info-modal/mode
   bootstrap: [AppComponent],
   entryComponents: [
     ModemInfoModalComponent,
+    AddAppToUserModalComponent,
+    AddAplikacijaModalComponent,
+    AddStrToAppModalComponent,
 
 
     Test1Component,
     Test2Component,
     NoviZahtjevComponent,
     PregledZahtjevaComponent,
-    SimpComponent
+    SimpComponent,
+    AdminComponent
   ]
 })
 export class AppModule { }

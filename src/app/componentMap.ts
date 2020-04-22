@@ -11,11 +11,13 @@ import { Test2Component } from './stranice/test2/test2.component';
 import { NoviZahtjevComponent } from './Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component';
 import { PregledZahtjevaComponent } from './Aplikacije/TkSuglasnost/pregled-zahtjeva/pregled-zahtjeva.component';
 import { SimpComponent } from './Aplikacije/SIMP/simp/simp.component';
+import { AdminComponent } from './Aplikacije/Admin/admin/admin.component';
 
 export const components = {
   'Test1Component': Test1Component,
   'Test2Component': Test2Component,
   'NoviZahtjev': NoviZahtjevComponent,
   'PregledZahtjeva': PregledZahtjevaComponent,
-  'sinp': SimpComponent
+  'sinp': SimpComponent,
+  'Admin': AdminComponent
 };

@@ -1,0 +1,29 @@
+.li {
+  background-color: #007ad9;
+  border-radius: 80px 50px 80px 50px;
+  margin: 1px;
+  width: 100px;
+  text-align: center;
+}
+
+.link {
+  color: rgb(248, 248, 250)
+}
+
+.li:hover {
+  background-color: rgb(224, 226, 230);
+}
+
+.li:visited, .li:active {
+  background-color: rgb(224, 226, 230);
+}
+
+.del:hover, .del:active {
+  background-color: rgb(191, 195, 206);
+}
+
+.add:hover, .add:active {
+  color: rgb(191, 195, 206) !important;
+}
+
+

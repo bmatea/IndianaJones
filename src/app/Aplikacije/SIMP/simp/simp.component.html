@@ -5,12 +5,16 @@
   <div class="container m-2 border rounded d-flex justify-content-center " style="width: fit-content; background-color: rgb(197, 211, 236);">
     <form [formGroup]="form" class="form-group d-flex ">
       <div class="d-flex flex-column p-2">
+        <label for="tel" class="">TELEFON: </label>
+        <input type="text" formControlName="tel" name="tel" class="form-control " id="tel">
+      </div>
+      <div class="d-flex flex-column p-2">
         <label for="adsl_username" class="">ADSL USERNAME: </label>
-        <input type="text" formControlName="adsl_username" name="prikljucak_id" class="form-control " id="adsl_username">
+        <input type="text" formControlName="adsl_username" name="adsl_username" class="form-control " id="adsl_username">
       </div>
       <div class="d-flex flex-column p-2">
         <label for="iptv_username" class="">IPTV USERNAME: </label>
-        <input type="text" formControlName="iptv_username" name="prikljucak_id" class="form-control " id="iptv_username">
+        <input type="text" formControlName="iptv_username" name="iptv_username" class="form-control " id="iptv_username">
       </div>
       <div class="d-flex flex-column justify-content-end p-2">
         <div class="btn btn-info"  style="height: 40px;" (click)="updateDiagram()">Prikaži</div>
@@ -772,12 +776,12 @@
               </div>
             </ng-template>
           </li>
-          <li [ngbNavItem]="2">
+          <!-- <li [ngbNavItem]="2">
             <a ngbNavLink>Radius Info</a>
             <ng-template ngbNavContent>
               radius info content
             </ng-template>
-          </li>
+          </li> -->
           <li class="d-flex justify-content-end flex-grow-1 mr-2 ">
             <i *ngIf="isCollapsed; else elseBlock" class="fa fa-caret-down align-self-center border rounded p-2" (click)="this.isCollapsed = false;"></i>
             <ng-template #elseBlock><i class="fa fa-caret-up align-self-center border rounded p-2" (click)="this.isCollapsed = true"></i></ng-template>

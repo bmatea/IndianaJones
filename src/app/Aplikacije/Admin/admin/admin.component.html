@@ -1,0 +1,354 @@
+<div  class="d-flex flex-column  shadow-sm rounded mb-5 pb-5 mx-3 " style="background-color: rgb(247, 249, 252); min-height: 600px;" >
+  <!-- <ul ngbNav #nav="ngbNav" class="nav-tab p-1 d-flex justify-content-start w-100" >
+    <li ngbNavItem class="li">
+      <a class="link" ngbNavLink>Korisnici</a>
+      <ng-template ngbNavContent >
+        <div class="d-flex justify-content-around">
+          <div style="width: 700px;" class="d-flex flex-column ml-3">
+            <h5>Korisnici</h5>
+            <p-table [columns]="cols" [value]="rows" dataKey="korisnikId" rowHover="true" [paginator]="true" [rows]="10" autoLayout="true" selectionMode="single" [(selection)]="selectedUser" (onRowUnselect)="rowUserUnselected()" (onRowSelect)="rowUserSelect($event)" >
+              <ng-template pTemplate="header" let-columns>
+                  <tr>
+                      <th style="width: 3em"></th>
+                      <th *ngFor="let col of columns" style="width: fit-content;">
+                          {{col.header}}
+                      </th>
+                  </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns">
+                  <tr [pSelectableRow]="rowData">
+                      <td>
+                          <a href="" [pRowToggler]="rowData" >
+                              <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+                          </a>
+                      </td>
+                      <td *ngFor="let col of columns" style="width: fit-content;">
+                          {{rowData[col.field]}}
+                      </td>
+                  </tr>
+              </ng-template>
+              <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+                  <tr>
+                      <td [attr.colspan]="columns.length + 1">
+                          <div class="" style="font-size:14px;padding:20px" [@rowExpansionTrigger]="'active'">
+                              <div class="" style="text-align:start">
+                                  <div>Tvrtka ID: {{rowData['tvrtkaId']}}</div>
+                                  <div>Global Korisnik ID: {{rowData['globalKorisnikId']}}</div>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+              </ng-template>
+            </p-table>
+          </div>
+          <div class="d-flex flex-column p-2">
+            <div class="d-flex flex-column" class=" mb-5 border p-2">
+              <div class="d-flex justify-content-between ">
+                <h5>Aplikacije</h5>
+                <div class="" type="button" (click)="addApp()"><i class="fas fa-plus fa-lg add mr-1" style="color: #007ad9"></i></div>
+              </div>
+              <p-dialog header="{{selectedAppName}}" [closable]="false" [(visible)]="appDeleteVisible && selectedApp" [style.width]="'200px'">
+                Jeste li sigurni da želite ukloniti pravo na aplikaciju {{selectedAppName}}?
+                <p-footer>
+                  <button type="button" (click)="deleteApp()" >Da</button>
+                  <button type="button" (click)="deleteAppNo()">Ne</button>
+                </p-footer>
+              </p-dialog>
+              <div style="width: 500px; height: fit-content; " >
+              <p-table [columns]="appCols" [value]="apps" editMode="row" dataKey="id" [(selection)]="selectedApp"  autoLayout="true" selectionMode="single" (onRowSelect)="rowAppSelected($event)" (onRowUnselect)="rowAppUnselected()">
+                  <ng-template pTemplate="header" let-columns>
+                      <tr >
+                          <th *ngFor="let col of columns" style="width: fit-content;">
+                              {{col.header}}
+                          </th>
+                          <th style="width: 4em; text-align: center;"></th>
+                      </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-rowData let-columns="columns">
+                      <tr [pSelectableRow]="rowData" >
+                          <td *ngFor="let col of columns" style="width: fit-content;">
+                              {{rowData[col.field]}}
+                          </td>
+                          <td style="text-align: center;" class="del" (click)="delClick(rowData)"><i class="fas fa-trash-alt "></i></td>
+                      </tr>
+                  </ng-template>
+                </p-table>
+              </div>
+            </div>
+            <div class="d-flex flex-column" class="border p-2">
+              <h5>Role</h5>
+              <div style="width: 500px; height: fit-content;" >
+                <p-table [columns]="roleCols" [value]="role" dataKey="korisnikId"  autoLayout="true" >
+                  <ng-template pTemplate="header" let-columns>
+                      <tr>
+                          <th *ngFor="let col of columns" style="width: fit-content;">
+                              {{col.header}}
+                          </th>
+                      </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-rowData let-columns="columns">
+                      <tr>
+                          <td *ngFor="let col of columns" style="width: fit-content;">
+                              {{rowData[col.field]}}
+                          </td>
+                      </tr>
+                  </ng-template>
+                </p-table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </li>
+    <li ngbNavItem class="li">
+      <a ngbNavLink class="link">Aplikacije</a>
+      <ng-template ngbNavContent>Second content</ng-template>
+    </li>
+    <li ngbNavItem class="li">
+      <a ngbNavLink class="link">Stranice</a>
+      <ng-template ngbNavContent>Second content</ng-template>
+    </li>
+  </ul>
+  <div class="d-flex justify-content-center"><i *ngIf="!rows" class="fas fa-spinner fa-spin ml-2" style="font-size: 3em;"></i></div>
+  <div *ngIf="rows" [ngbNavOutlet]="nav" class="p-2"></div> -->
+
+  <div class="d-flex flex-column">
+    <div class="m-3 d-flex"><h5>Korisnička prava</h5> <i *ngIf="!korisnickaPravaToggle" (click)="this.korisnickaPravaToggle = true" class="fa fa-caret-down mt-1 ml-2"></i><i *ngIf="korisnickaPravaToggle" (click)="this.korisnickaPravaToggle = false" class="fa fa-caret-up mt-1 ml-2"></i></div>
+    <div class="d-flex justify-content-start"><i *ngIf="!rows" class="fas fa-spinner fa-spin ml-5 mt-2" style="font-size: 3em;"></i></div>
+      <div *ngIf="korisnickaPravaToggle && rows" style="background-color: #dae4f5;" class="py-3 mx-3">
+        <div class="d-flex justify-content-around">
+          <div style="width: 700px;" class="d-flex flex-column ml-3">
+            <h5>Korisnici</h5>
+            <p-table [columns]="cols" [value]="rows" dataKey="korisnikId" rowHover="true" [paginator]="true" [rows]="10" autoLayout="true" selectionMode="single" [(selection)]="selectedUser" (onRowUnselect)="rowUserUnselected()" (onRowSelect)="rowUserSelect($event)" >
+              <ng-template pTemplate="header" let-columns>
+                  <tr>
+                      <th style="width: 3em"></th>
+                      <th *ngFor="let col of columns" style="width: fit-content;">
+                          {{col.header}}
+                      </th>
+                  </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns">
+                  <tr [pSelectableRow]="rowData">
+                      <td>
+                          <a href="" [pRowToggler]="rowData" >
+                              <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+                          </a>
+                      </td>
+                      <td *ngFor="let col of columns" style="width: fit-content;">
+                          {{rowData[col.field]}}
+                      </td>
+                  </tr>
+              </ng-template>
+              <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+                  <tr>
+                      <td [attr.colspan]="columns.length + 1">
+                          <div class="" style="font-size:14px;padding:20px" [@rowExpansionTrigger]="'active'">
+                              <div class="" style="text-align:start">
+                                  <div>Tvrtka ID: {{rowData['tvrtkaId']}}</div>
+                                  <div>Global Korisnik ID: {{rowData['globalKorisnikId']}}</div>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+              </ng-template>
+            </p-table>
+          </div>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-column" class=" mb-5  ">
+              <div class="d-flex justify-content-between ">
+                <h5>Aplikacije</h5>
+                <div *ngIf="selectedUser" class="" type="button" (click)="addApp()"><i class="fas fa-plus fa-lg add mr-3" style="color: #007ad9"></i></div>
+              </div>
+              <p-dialog header="{{selectedAppName}}" [closable]="false" [(visible)]="appDeleteVisible && selectedApp" [style.width]="'200px'">
+                Jeste li sigurni da želite ukloniti pravo na aplikaciju {{selectedAppName}}?
+                <p-footer>
+                  <button type="button" (click)="deleteApp()" >Da</button>
+                  <button type="button" (click)="deleteAppNo()">Ne</button>
+                </p-footer>
+              </p-dialog>
+              <div style="width: 500px; height: fit-content; " >
+              <p-table [columns]="appCols" [value]="apps" editMode="row" dataKey="id" [(selection)]="selectedApp"  autoLayout="true" selectionMode="single" (onRowSelect)="rowAppSelected($event)" (onRowUnselect)="rowAppUnselected()">
+                  <ng-template pTemplate="header" let-columns>
+                      <tr >
+                          <th *ngFor="let col of columns" style="width: fit-content;">
+                              {{col.header}}
+                          </th>
+                          <th style="width: 4em; text-align: center;"></th>
+                      </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-rowData let-columns="columns">
+                      <tr [pSelectableRow]="rowData" >
+                          <td *ngFor="let col of columns" style="width: fit-content;">
+                              {{rowData[col.field]}}
+                          </td>
+                          <td style="text-align: center;" class="del" (click)="delClick(rowData)" ><i class="fas fa-trash-alt "></i></td>
+                      </tr>
+                  </ng-template>
+                </p-table>
+              </div>
+            </div>
+            <div class="d-flex flex-column" class="">
+              <div class="d-flex justify-content-between ">
+                <h5>Role</h5>
+                <div *ngIf="selectedApp" class="" type="button" (click)="addRola()"><i class="fas fa-plus fa-lg add mr-3" style="color: #007ad9"></i></div>
+              </div>
+              <p-dialog header="{{selectedRolaName}}" [closable]="false" [(visible)]="rolaDeleteVisible && selectedRola" [style.width]="'200px'">
+                Jeste li sigurni da želite ukloniti rolu {{selectedRolaName}}?
+                <p-footer>
+                  <button type="button" (click)="deleteRola()" >Da</button>
+                  <button type="button" (click)="deleteRolaNo()">Ne</button>
+                </p-footer>
+              </p-dialog>
+              <div style="width: 500px; height: fit-content;" >
+                <p-table [columns]="roleCols" [value]="role" dataKey="korisnikId" selectionMode="single" [(selection)]="selectedRola" (onRowSelect)="rolaSelected($event)" (onRowUnselect)="rolaUnselected()" autoLayout="true" >
+                  <ng-template pTemplate="header" let-columns>
+                      <tr>
+                          <th *ngFor="let col of columns" style="width: fit-content;">
+                              {{col.header}}
+                          </th>
+                          <th style="width: 4em; text-align: center;"></th>
+                      </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-rowData let-columns="columns">
+                      <tr [pSelectableRow]="rowData">
+                          <td *ngFor="let col of columns" style="width: fit-content;">
+                              {{rowData[col.field]}}
+                          </td>
+                          <td style="text-align: center;" class="del" (click)="delRolaClick(rowData)" ><i class="fas fa-trash-alt "></i></td>
+                      </tr>
+                  </ng-template>
+                </p-table>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="d-flex flex-column">
+    <div class="m-3 d-flex">
+      <h5>Aplikacije</h5><i *ngIf="!aplikacijeToggle" (click)="this.aplikacijeToggle = true" class="fa fa-caret-down ml-2 mt-1"></i><i *ngIf="aplikacijeToggle" (click)="this.aplikacijeToggle = false" class="fa fa-caret-up mt-1 ml-2"></i>
+    </div>
+    <div *ngIf="aplikacijeToggle && aplikacijeAll" style="background-color: #dae4f5;" class="py-3 mx-3">
+      <div class="d-flex justify-content-around">
+        <div style="width: 700px;" class="d-flex flex-column ml-3">
+          <div class="d-flex justify-content-between ">
+            <h5>Popis aplikacija</h5>
+            <div class="" type="button" (click)="addAplikacija()"><i class="fas fa-plus fa-lg add mr-3" style="color: #007ad9"></i></div>
+          </div>
+          <p-table [columns]="aplCols" [value]="aplikacijeAll" dataKey="aplikacijaId" rowHover="true" [paginator]="true" [rows]="10" autoLayout="true" selectionMode="single" [(selection)]="selectedAplikacija" (onRowUnselect)="rowAplikacijaUnselected()" (onRowSelect)="rowAplikacijaSelected($event)" >
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th style="width: 3em"></th>
+                    <th *ngFor="let col of columns" style="width: fit-content;">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns">
+                <tr [pSelectableRow]="rowData">
+                    <td>
+                        <a href="" [pRowToggler]="rowData" >
+                            <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+                        </a>
+                    </td>
+                    <td *ngFor="let col of columns" style="width: fit-content;">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+                <tr>
+                    <td [attr.colspan]="columns.length + 1">
+                        <div class="" style="font-size:14px;padding:20px" [@rowExpansionTrigger]="'active'">
+                            <div class="" style="text-align:start">
+                                <div>Tip aplikacije ID: {{rowData['taplikacijeId']}}</div>
+                                <div>Opis: {{rowData['opis']}}</div>
+                                <div>Grupa ID: {{rowData['grupaId']}}</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+          </p-table>
+        </div>
+        <div class="d-flex flex-column">
+            <div class="d-flex flex-column" class=" mb-5  ">
+              <div class="d-flex justify-content-between ">
+                <h5>Pridružene stranice</h5>
+                <div class="" type="button" (click)="addStrToApp()"><i class="fas fa-plus fa-lg add mr-3" style="color: #007ad9"></i></div>
+              </div>
+              <p-dialog header="{{selectedStranicaName}}" [closable]="false" [(visible)]="strDeleteVisible && selectedStr" [style.width]="'200px'">
+                Jeste li sigurni da želite ukloniti pridruženu stranicu {{selectedStranicaName}}?
+                <p-footer>
+                  <button type="button" (click)="deleteStr()" >Da</button>
+                  <button type="button" (click)="deleteStrNo()">Ne</button>
+                </p-footer>
+              </p-dialog>
+              <div style="width: 500px; height: fit-content; " >
+              <p-table [columns]="strCols" [value]="stranice" editMode="row" dataKey="id" [(selection)]="selectedStr"  autoLayout="true" selectionMode="single" (onRowSelect)="rowStrSelected($event)" (onRowUnselect)="rowStrUnselected()">
+                  <ng-template pTemplate="header" let-columns>
+                      <tr >
+                          <th *ngFor="let col of columns" style="width: fit-content;">
+                              {{col.header}}
+                          </th>
+                          <th style="width: 4em; text-align: center;"></th>
+                      </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-rowData let-columns="columns">
+                      <tr [pSelectableRow]="rowData" >
+                          <td *ngFor="let col of columns" style="width: fit-content;">
+                              {{rowData[col.field]}}
+                          </td>
+                          <td style="text-align: center;" class="del" (click)="delStrClick(rowData)" ><i class="fas fa-trash-alt "></i></td>
+                      </tr>
+                  </ng-template>
+                </p-table>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-column">
+    <div class="m-3 d-flex">
+      <h5>Stranice</h5><i *ngIf="!straniceToggle" (click)="this.straniceToggle = true" class="fa fa-caret-down ml-2 mt-1"></i><i *ngIf="straniceToggle" (click)="this.straniceToggle = false" class="fa fa-caret-up mt-1 ml-2"></i>
+    </div>
+    <div *ngIf="straniceToggle && straniceAll" style="background-color: #dae4f5;" class="py-3 mx-3">
+      <div class="d-flex">
+        <div style="width: fit-content;" class="d-flex flex-column ml-3">
+          <div class="d-flex justify-content-between ">
+            <h5>Popis stranica</h5>
+            <div class="" type="button" (click)="addStranica()"><i class="fas fa-plus fa-lg add mr-3" style="color: #007ad9"></i></div>
+          </div>
+          <p-dialog header="{{selectedStranicaName}}" [closable]="false" [(visible)]="stranicaDeleteVisible" [style.width]="'200px'">
+            Jeste li sigurni da želite ukloniti stranicu {{selectedStranicaName}}?
+            <p-footer>
+              <button type="button" (click)="deleteStranica()" >Da</button>
+              <button type="button" (click)="deleteStranicaNo()">Ne</button>
+            </p-footer>
+          </p-dialog>
+          <div style="width: fit-content; height: fit-content;">
+            <p-table [columns]="straniceCols" [value]="straniceAll" editMode="row" dataKey="stranicaId" rowHover="true" [paginator]="true" [rows]="10" autoLayout="true" >
+              <ng-template pTemplate="header" let-columns>
+                  <tr>
+                      <th *ngFor="let col of columns" style="width: fit-content;">
+                          {{col.header}}
+                      </th>
+                      <th style="width: 3em"></th>
+                    </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-rowData let-columns="columns">
+                  <tr>
+                      <td *ngFor="let col of columns" style="width: fit-content;">
+                          {{rowData[col.field]}}
+                      </td>
+                      <td style="text-align: center;" class="del" (click)="delStranicaClick(rowData)" ><i class="fas fa-trash-alt "></i></td>
+                  </tr>
+              </ng-template>
+            </p-table></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

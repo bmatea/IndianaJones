@@ -1,22 +1,40 @@
 # Details
 
-Date : 2020-04-08 13:22:56
+Date : 2020-04-22 16:32:54
 
-Directory c:\Users\Matea\Desktop\IndianaJones\src
+Directory c:\Users\Matea\Desktop\IndianaJones\src\app
 
-Total : 114 files,  3046 codes, 163 comments, 530 blanks, all 3739 lines
+Total : 125 files,  4182 codes, 233 comments, 663 blanks, all 5078 lines
 
 [summary](results.md)
 
 ## Files
 | filename | language | code | comment | blank | total |
 | :--- | :--- | ---: | ---: | ---: | ---: |
+| [src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.css](/src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.css) | CSS | 3 | 0 | 1 | 4 |
+| [src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.html](/src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.html) | HTML | 31 | 0 | 3 | 34 |
+| [src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.spec.ts](/src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.ts](/src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.ts) | TypeScript | 33 | 0 | 8 | 41 |
+| [src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.css](/src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.html](/src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.html) | HTML | 34 | 0 | 1 | 35 |
+| [src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.spec.ts](/src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.ts](/src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.ts) | TypeScript | 29 | 0 | 8 | 37 |
+| [src/app/Aplikacije/Admin/admin/admin.component.css](/src/app/Aplikacije/Admin/admin/admin.component.css) | CSS | 22 | 0 | 8 | 30 |
+| [src/app/Aplikacije/Admin/admin/admin.component.html](/src/app/Aplikacije/Admin/admin/admin.component.html) | HTML | 200 | 112 | 2 | 314 |
+| [src/app/Aplikacije/Admin/admin/admin.component.spec.ts](/src/app/Aplikacije/Admin/admin/admin.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/Aplikacije/Admin/admin/admin.component.ts](/src/app/Aplikacije/Admin/admin/admin.component.ts) | TypeScript | 199 | 7 | 40 | 246 |
+| [src/app/Aplikacije/Admin/services/user-service.service.spec.ts](/src/app/Aplikacije/Admin/services/user-service.service.spec.ts) | TypeScript | 9 | 0 | 4 | 13 |
+| [src/app/Aplikacije/Admin/services/user-service.service.ts](/src/app/Aplikacije/Admin/services/user-service.service.ts) | TypeScript | 68 | 0 | 23 | 91 |
+| [src/app/Aplikacije/SIMP/modem-info-modal/modem-info-modal.component.css](/src/app/Aplikacije/SIMP/modem-info-modal/modem-info-modal.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [src/app/Aplikacije/SIMP/modem-info-modal/modem-info-modal.component.html](/src/app/Aplikacije/SIMP/modem-info-modal/modem-info-modal.component.html) | HTML | 52 | 0 | 1 | 53 |
+| [src/app/Aplikacije/SIMP/modem-info-modal/modem-info-modal.component.spec.ts](/src/app/Aplikacije/SIMP/modem-info-modal/modem-info-modal.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/Aplikacije/SIMP/modem-info-modal/modem-info-modal.component.ts](/src/app/Aplikacije/SIMP/modem-info-modal/modem-info-modal.component.ts) | TypeScript | 14 | 0 | 6 | 20 |
 | [src/app/Aplikacije/SIMP/services/mock.service.spec.ts](/src/app/Aplikacije/SIMP/services/mock.service.spec.ts) | TypeScript | 9 | 0 | 4 | 13 |
-| [src/app/Aplikacije/SIMP/services/mock.service.ts](/src/app/Aplikacije/SIMP/services/mock.service.ts) | TypeScript | 28 | 1 | 10 | 39 |
-| [src/app/Aplikacije/SIMP/simp/simp.component.css](/src/app/Aplikacije/SIMP/simp/simp.component.css) | CSS | 6 | 1 | 1 | 8 |
-| [src/app/Aplikacije/SIMP/simp/simp.component.html](/src/app/Aplikacije/SIMP/simp/simp.component.html) | HTML | 719 | 0 | 5 | 724 |
+| [src/app/Aplikacije/SIMP/services/mock.service.ts](/src/app/Aplikacije/SIMP/services/mock.service.ts) | TypeScript | 176 | 17 | 26 | 219 |
+| [src/app/Aplikacije/SIMP/simp/simp.component.css](/src/app/Aplikacije/SIMP/simp/simp.component.css) | CSS | 10 | 0 | 2 | 12 |
+| [src/app/Aplikacije/SIMP/simp/simp.component.html](/src/app/Aplikacije/SIMP/simp/simp.component.html) | HTML | 784 | 6 | 5 | 795 |
 | [src/app/Aplikacije/SIMP/simp/simp.component.spec.ts](/src/app/Aplikacije/SIMP/simp/simp.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
-| [src/app/Aplikacije/SIMP/simp/simp.component.ts](/src/app/Aplikacije/SIMP/simp/simp.component.ts) | TypeScript | 97 | 0 | 26 | 123 |
+| [src/app/Aplikacije/SIMP/simp/simp.component.ts](/src/app/Aplikacije/SIMP/simp/simp.component.ts) | TypeScript | 267 | 1 | 36 | 304 |
 | [src/app/Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component.css](/src/app/Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component.css) | CSS | 3 | 0 | 1 | 4 |
 | [src/app/Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component.html](/src/app/Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component.html) | HTML | 222 | 7 | 2 | 231 |
 | [src/app/Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component.spec.ts](/src/app/Aplikacije/TkSuglasnost/novi-zahtjev/novi-zahtjev.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
@@ -44,7 +62,7 @@ Total : 114 files,  3046 codes, 163 comments, 530 blanks, all 3739 lines
 | [src/app/app.component.html](/src/app/app.component.html) | HTML | 2 | 0 | 1 | 3 |
 | [src/app/app.component.spec.ts](/src/app/app.component.spec.ts) | TypeScript | 31 | 0 | 5 | 36 |
 | [src/app/app.component.ts](/src/app/app.component.ts) | TypeScript | 27 | 0 | 5 | 32 |
-| [src/app/app.module.ts](/src/app/app.module.ts) | TypeScript | 82 | 0 | 6 | 88 |
+| [src/app/app.module.ts](/src/app/app.module.ts) | TypeScript | 105 | 0 | 7 | 112 |
 | [src/app/application-content/application-content.component.css](/src/app/application-content/application-content.component.css) | CSS | 3 | 3 | 2 | 8 |
 | [src/app/application-content/application-content.component.html](/src/app/application-content/application-content.component.html) | HTML | 17 | 6 | 6 | 29 |
 | [src/app/application-content/application-content.component.spec.ts](/src/app/application-content/application-content.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
@@ -57,7 +75,7 @@ Total : 114 files,  3046 codes, 163 comments, 530 blanks, all 3739 lines
 | [src/app/auth-interceptor.ts](/src/app/auth-interceptor.ts) | TypeScript | 29 | 1 | 6 | 36 |
 | [src/app/component.directive.spec.ts](/src/app/component.directive.spec.ts) | TypeScript | 7 | 0 | 2 | 9 |
 | [src/app/component.directive.ts](/src/app/component.directive.ts) | TypeScript | 7 | 0 | 4 | 11 |
-| [src/app/componentMap.ts](/src/app/componentMap.ts) | TypeScript | 20 | 0 | 2 | 22 |
+| [src/app/componentMap.ts](/src/app/componentMap.ts) | TypeScript | 22 | 0 | 2 | 24 |
 | [src/app/footer/footer.component.css](/src/app/footer/footer.component.css) | CSS | 9 | 0 | 3 | 12 |
 | [src/app/footer/footer.component.html](/src/app/footer/footer.component.html) | HTML | 17 | 0 | 3 | 20 |
 | [src/app/footer/footer.component.spec.ts](/src/app/footer/footer.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
@@ -118,12 +136,5 @@ Total : 114 files,  3046 codes, 163 comments, 530 blanks, all 3739 lines
 | [src/app/test/test.component.html](/src/app/test/test.component.html) | HTML | 1 | 0 | 1 | 2 |
 | [src/app/test/test.component.spec.ts](/src/app/test/test.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
 | [src/app/test/test.component.ts](/src/app/test/test.component.ts) | TypeScript | 11 | 0 | 5 | 16 |
-| [src/environments/environment.prod.ts](/src/environments/environment.prod.ts) | TypeScript | 3 | 0 | 1 | 4 |
-| [src/environments/environment.ts](/src/environments/environment.ts) | TypeScript | 3 | 11 | 3 | 17 |
-| [src/index.html](/src/index.html) | HTML | 14 | 0 | 2 | 16 |
-| [src/main.ts](/src/main.ts) | TypeScript | 14 | 0 | 6 | 20 |
-| [src/polyfills.ts](/src/polyfills.ts) | TypeScript | 1 | 55 | 8 | 64 |
-| [src/styles.css](/src/styles.css) | CSS | 2 | 1 | 2 | 5 |
-| [src/test.ts](/src/test.ts) | TypeScript | 13 | 4 | 4 | 21 |
 
 [summary](results.md)

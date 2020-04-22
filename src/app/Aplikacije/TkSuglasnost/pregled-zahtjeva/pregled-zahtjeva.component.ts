@@ -8,7 +8,7 @@ import { HttpEventType, HttpErrorResponse } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-pregled-zahtjeva',
+  selector: 'app-pregled-zahtjeva.w-100',
   templateUrl: './pregled-zahtjeva.component.html',
   styleUrls: ['./pregled-zahtjeva.component.css']
 })

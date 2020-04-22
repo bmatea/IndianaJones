@@ -1,0 +1,34 @@
+<div class="modal-header">
+  <h4 class="modal-title">Odaberite aplikacije koje želite dodati korisniku {{this.userId}}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Closed')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p-table [columns]="cols" [value]="nonAssignedApps" [paginator]=true [rows]=10 [(selection)]="selectedApps" dataKey="id">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th style="width: 3em">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+            <td>
+                <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+            </td>
+            <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="onAdd()">Dodaj</button>
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Closed')">Zatvori</button>
+</div>
