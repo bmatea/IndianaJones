@@ -39,7 +39,7 @@ import { DialogModule } from 'primeng/dialog';
 import { AddAppToUserModalComponent } from './Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component';
 import { AddAplikacijaModalComponent } from './Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component';
 import { AddStrToAppModalComponent } from './Aplikacije/Admin/add-str-to-app-modal/add-str-to-app-modal.component';
-import { AddStranicaModalComponent } from './Aplikacije/Admin/add-stranica-modal/add-stranica-modal.component';
+import { AddRolaModalComponent } from './Aplikacije/Admin/add-rola-modal/add-rola-modal.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +65,7 @@ import { AddStranicaModalComponent } from './Aplikacije/Admin/add-stranica-modal
     AddAppToUserModalComponent,
     AddAplikacijaModalComponent,
     AddStrToAppModalComponent,
-    AddStranicaModalComponent,
+    AddRolaModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -99,6 +99,7 @@ import { AddStranicaModalComponent } from './Aplikacije/Admin/add-stranica-modal
     AddAppToUserModalComponent,
     AddAplikacijaModalComponent,
     AddStrToAppModalComponent,
+    AddRolaModalComponent,
 
 
     Test1Component,

@@ -1,13 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { UserServiceService } from '../services/user-service.service';
 import { ColumnMode } from '@swimlane/ngx-datatable';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbPopover } from '@ng-bootstrap/ng-bootstrap';
 import { AddAppToUserModalComponent } from '../add-app-to-user-modal/add-app-to-user-modal.component';
 import { ModulAdapter } from 'src/app/models/modul-adapter';
 import { AddAplikacijaModalComponent } from '../add-aplikacija-modal/add-aplikacija-modal.component';
 import { AddStrToAppModalComponent } from '../add-str-to-app-modal/add-str-to-app-modal.component';
 import { ThrowStmt } from '@angular/compiler';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { AddRolaModalComponent } from '../add-rola-modal/add-rola-modal.component';
 
 @Component({
   selector: 'app-admin.w-100',
@@ -54,19 +56,31 @@ export class AdminComponent implements OnInit {
   rolaDeleteVisible = false;
   strDeleteVisible = false;
   stranicaDeleteVisible = false;
+  aplikacijaDeleteVisible = false;
   selectedAppName;
-  selectedRolaName;
   selectedStranicaName;
+  selectedAplikacijaToDeleteName;
+  selectedRolaName;
   stranicaToDeleteId;
+  aplikacijaToDeleteId;
   korisnickaPravaToggle = true;
-  aplikacijeToggle = false;
-  straniceToggle = false;
+  aplikacijeToggle = true;
+  straniceToggle = true;
   aplikacijeAll;
   straniceAll;
+  isFormDisabled = true;
+  form;
+  alertVisible = false;
+  rolaDodanaAlertVisible = false;
+  rolaUklonjenaAlertVisible = false;
 
-  constructor(private service: UserServiceService, private modalService: NgbModal) { }
+  constructor(private service: UserServiceService, private modalService: NgbModal, private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.form = this.fb.group({
+      naziv: ['', [Validators.required]],
+      oznaka: ['', [Validators.required]],
+    });
     this.service.getUsers().subscribe(data => this.rows = data);
     this.cols = [
       { field: 'korisnikId', header: 'ID' },
@@ -174,27 +188,36 @@ export class AdminComponent implements OnInit {
   }
 
   addRola() {
-
+    const mr = this.modalService.open(AddRolaModalComponent);
+    mr.componentInstance.userId = this.userId;
+    mr.componentInstance.appId = this.appId;
+    mr.result.then(res => {
+      if (res === 'dodano') {
+        this.role = [];
+        this.selectedApp = '';
+        this.rolaDodanaAlertVisible = true;
+      }
+    }).catch(err => console.log(err));
   }
 
   delRolaClick(e) {
     this.rolaDeleteVisible = true;
+    this.selectedRola = e['korisnikId'];
+    this.selectedRolaName = e['naziv'];
   }
 
   deleteRola() {
-
+    this.service.removeRolaForUser(this.selectedRola, this.userId).subscribe(res => {
+      this.service.getRoleForApp(this.userId, this.appId).subscribe(role => {
+        this.role = role;
+        this.rolaDeleteVisible = false;
+        this.rolaUklonjenaAlertVisible = true;
+      });
+    });
   }
 
   deleteRolaNo() {
     this.rolaDeleteVisible = false;
-    this.selectedRola = '';
-  }
-
-  rolaSelected(e) {
-    this.selectedRolaName = this.selectedRola.naziv;
-  }
-
-  rolaUnselected() {
     this.selectedRola = '';
   }
 
@@ -208,7 +231,16 @@ export class AdminComponent implements OnInit {
   }
 
   addStranica() {
-
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
+    this.service.addStranica(this.form.get('naziv').value, this.form.get('oznaka').value).subscribe(res => {
+      this.service.getAllStranice().subscribe(strs => this.straniceAll = strs);
+      this.isFormDisabled = true;
+      this.form.reset();
+      this.alertVisible = true;
+    });
   }
 
   deleteStr() {
@@ -291,5 +323,39 @@ export class AdminComponent implements OnInit {
 
   deleteStranicaNo() {
     this.stranicaDeleteVisible = false;
+  }
+
+  hasErrors(control) {
+    if (this.form.get(control).invalid && (this.form.get(control).touched || this.form.get(control).dirty)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  onOcisti() {
+    this.form.reset();
+  }
+
+  addUser() {
+
+  }
+
+  deleteAplikacijaClick(e) {
+    this.aplikacijaDeleteVisible = true;
+    this.selectedAplikacijaToDeleteName = e['naziv'];
+    this.aplikacijaToDeleteId = e['id'];
+  }
+
+  deleteAplikacija() {
+    this.service.removeAplikacija(this.aplikacijaToDeleteId).subscribe(res => {
+      this.service.getAplikacije().subscribe(aps => this.aplikacijeAll = aps);
+      this.stranice = [];
+      this.selectedStr = '';
+      this.aplikacijaDeleteVisible = false;
+    });
+  }
+  deleteAplikacijaNo() {
+    this.aplikacijaDeleteVisible = false;
   }
 }

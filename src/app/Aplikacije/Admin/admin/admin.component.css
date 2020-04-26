@@ -26,4 +26,16 @@
   color: rgb(191, 195, 206) !important;
 }
 
+label {
+  width: 100px;
+}
+
+.disabledDiv {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+
+
+
 

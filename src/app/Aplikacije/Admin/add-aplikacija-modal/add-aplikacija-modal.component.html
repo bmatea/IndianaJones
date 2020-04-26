@@ -7,22 +7,28 @@
 <div class="modal-body">
   <form [formGroup]="form" class="ml-3">
     <div class="d-flex flex-column align-items-center">
-      <div class="d-flex form-group">
-        <label for="naziv">Naziv: * </label>
-        <input name="naziv" type="text" formControlName="naziv" class="form-control w-50">
-        <span *ngIf="this.hasErrors('naziv')" class="text-danger ml-2 align-middle ">Obavezan unos</span>
+      <div class="d-flex form-group flex-column">
+        <div class="d-flex">
+          <label for="naziv">Naziv: * </label>
+          <input name="naziv" type="text" formControlName="naziv" class="form-control w-75">
+        </div>
+        <span *ngIf="this.hasErrors('naziv')" class="text-danger d-flex justify-content-end">Obavezan unos</span>
       </div>
 
-      <div class="d-flex form-group">
-        <label for="oznaka">Oznaka: * </label>
-        <input name="oznaka" type="text" formControlName="oznaka" class="form-control w-50">
-        <span *ngIf="this.hasErrors('oznaka')" class="text-danger ml-2 align-middle ">Obavezan unos</span>
+      <div class="d-flex form-group flex-column">
+        <div class="d-flex">
+          <label for="oznaka">Oznaka: * </label>
+          <input name="oznaka" type="text" formControlName="oznaka" class="form-control w-75">
+        </div>
+        <span *ngIf="this.hasErrors('oznaka')" class="text-danger d-flex justify-content-end ">Obavezan unos</span>
       </div>
 
-      <div class="d-flex form-group">
-        <label for="opis">Opis: * </label>
-        <input name="opis" type="text" formControlName="opis" class="form-control w-50">
-        <span *ngIf="this.hasErrors('opis')" class="text-danger ml-2 align-middle ">Obavezan unos</span>
+      <div class="d-flex form-group flex-column">
+        <div class="d-flex">
+          <label for="opis">Opis: * </label>
+          <input name="opis" type="text" formControlName="opis" class="form-control w-75">
+        </div>
+        <span *ngIf="this.hasErrors('opis')" class="text-danger d-flex justify-content-end">Obavezan unos</span>
       </div>
     </div>
     </form>

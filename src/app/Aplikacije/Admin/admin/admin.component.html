@@ -118,13 +118,17 @@
       <div *ngIf="korisnickaPravaToggle && rows" style="background-color: #dae4f5;" class="py-3 mx-3">
         <div class="d-flex justify-content-around">
           <div style="width: 700px;" class="d-flex flex-column ml-3">
-            <h5>Korisnici</h5>
-            <p-table [columns]="cols" [value]="rows" dataKey="korisnikId" rowHover="true" [paginator]="true" [rows]="10" autoLayout="true" selectionMode="single" [(selection)]="selectedUser" (onRowUnselect)="rowUserUnselected()" (onRowSelect)="rowUserSelect($event)" >
+            <div class="d-flex justify-content-between ">
+              <h5>Korisnici</h5>
+              <div class="" type="button" (click)="addUser()"><i class="fas fa-plus fa-lg add mr-3" style="color: #007ad9"></i></div>
+            </div>
+            <p-table [columns]="cols" class="korisnici" [value]="rows" dataKey="korisnikId" [responsive]=true rowHover="true" [paginator]="true" [rows]="10" autoLayout="true" selectionMode="single" [(selection)]="selectedUser" (onRowUnselect)="rowUserUnselected()" (onRowSelect)="rowUserSelect($event)" >
               <ng-template pTemplate="header" let-columns>
                   <tr>
                       <th style="width: 3em"></th>
-                      <th *ngFor="let col of columns" style="width: fit-content;">
+                      <th *ngFor="let col of columns" style="width: fit-content;" [pSortableColumn]="col.field">
                           {{col.header}}
+                          <p-sortIcon [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLableAsc="Activate to sort in ascending order"></p-sortIcon>
                       </th>
                   </tr>
               </ng-template>
@@ -193,15 +197,15 @@
                 <h5>Role</h5>
                 <div *ngIf="selectedApp" class="" type="button" (click)="addRola()"><i class="fas fa-plus fa-lg add mr-3" style="color: #007ad9"></i></div>
               </div>
-              <p-dialog header="{{selectedRolaName}}" [closable]="false" [(visible)]="rolaDeleteVisible && selectedRola" [style.width]="'200px'">
-                Jeste li sigurni da želite ukloniti rolu {{selectedRolaName}}?
+              <p-dialog header="{{selectedRola}}" [closable]="false" [(visible)]="rolaDeleteVisible && selectedRola" [style.width]="'200px'">
+                Jeste li sigurni da želite ukloniti rolu {{selectedRola}}?
                 <p-footer>
                   <button type="button" (click)="deleteRola()" >Da</button>
                   <button type="button" (click)="deleteRolaNo()">Ne</button>
                 </p-footer>
               </p-dialog>
               <div style="width: 500px; height: fit-content;" >
-                <p-table [columns]="roleCols" [value]="role" dataKey="korisnikId" selectionMode="single" [(selection)]="selectedRola" (onRowSelect)="rolaSelected($event)" (onRowUnselect)="rolaUnselected()" autoLayout="true" >
+                <p-table [columns]="roleCols" [value]="role" dataKey="korisnikId" autoLayout="true" >
                   <ng-template pTemplate="header" let-columns>
                       <tr>
                           <th *ngFor="let col of columns" style="width: fit-content;">
@@ -211,7 +215,7 @@
                       </tr>
                   </ng-template>
                   <ng-template pTemplate="body" let-rowData let-columns="columns">
-                      <tr [pSelectableRow]="rowData">
+                      <tr >
                           <td *ngFor="let col of columns" style="width: fit-content;">
                               {{rowData[col.field]}}
                           </td>
@@ -220,6 +224,8 @@
                   </ng-template>
                 </p-table>
               </div>
+              <ngb-alert *ngIf="this.rolaDodanaAlertVisible" type="success" (close)="this.rolaDodanaAlertVisible = false" class="mt-2">Rola dodana!</ngb-alert>
+              <ngb-alert *ngIf="this.rolaUklonjenaAlertVisible" type="success" (close)="this.rolaUklonjenaAlertVisible = false" class="mt-2">Rola uklonjena!</ngb-alert>
             </div>
           </div>
         </div>
@@ -236,6 +242,13 @@
             <h5>Popis aplikacija</h5>
             <div class="" type="button" (click)="addAplikacija()"><i class="fas fa-plus fa-lg add mr-3" style="color: #007ad9"></i></div>
           </div>
+          <p-dialog header="{{selectedAplikacijaToDeleteName}}" [closable]="false" [(visible)]="aplikacijaDeleteVisible" [style.width]="'200px'">
+            Jeste li sigurni da želite izbrisati aplikaciju {{selectedAplikacijaToDeleteName}}?
+            <p-footer>
+              <button type="button" (click)="deleteAplikacija()" >Da</button>
+              <button type="button" (click)="deleteAplikacijaNo()">Ne</button>
+            </p-footer>
+          </p-dialog>
           <p-table [columns]="aplCols" [value]="aplikacijeAll" dataKey="aplikacijaId" rowHover="true" [paginator]="true" [rows]="10" autoLayout="true" selectionMode="single" [(selection)]="selectedAplikacija" (onRowUnselect)="rowAplikacijaUnselected()" (onRowSelect)="rowAplikacijaSelected($event)" >
             <ng-template pTemplate="header" let-columns>
                 <tr>
@@ -243,6 +256,7 @@
                     <th *ngFor="let col of columns" style="width: fit-content;">
                         {{col.header}}
                     </th>
+                    <th style="width: 4em; text-align: center;"></th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns">
@@ -255,11 +269,12 @@
                     <td *ngFor="let col of columns" style="width: fit-content;">
                         {{rowData[col.field]}}
                     </td>
+                    <td style="text-align: center;" class="del" (click)="deleteAplikacijaClick(rowData)" ><i class="fas fa-trash-alt "></i></td>
                 </tr>
             </ng-template>
             <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
                 <tr>
-                    <td [attr.colspan]="columns.length + 1">
+                    <td [attr.colspan]="columns.length + 2">
                         <div class="" style="font-size:14px;padding:20px" [@rowExpansionTrigger]="'active'">
                             <div class="" style="text-align:start">
                                 <div>Tip aplikacije ID: {{rowData['taplikacijeId']}}</div>
@@ -315,11 +330,11 @@
       <h5>Stranice</h5><i *ngIf="!straniceToggle" (click)="this.straniceToggle = true" class="fa fa-caret-down ml-2 mt-1"></i><i *ngIf="straniceToggle" (click)="this.straniceToggle = false" class="fa fa-caret-up mt-1 ml-2"></i>
     </div>
     <div *ngIf="straniceToggle && straniceAll" style="background-color: #dae4f5;" class="py-3 mx-3">
-      <div class="d-flex">
-        <div style="width: fit-content;" class="d-flex flex-column ml-3">
-          <div class="d-flex justify-content-between ">
+      <div class="d-flex justify-content-around" >
+        <div style="width: 700px;" class="d-flex flex-column ml-3">
+          <div class="d-flex justify-content-between " style="width: 610px;">
             <h5>Popis stranica</h5>
-            <div class="" type="button" (click)="addStranica()"><i class="fas fa-plus fa-lg add mr-3" style="color: #007ad9"></i></div>
+            <div class="" type="button" (click)="this.isFormDisabled = false"><i class="fas fa-plus fa-lg add mr-3" style="color: #007ad9"></i></div>
           </div>
           <p-dialog header="{{selectedStranicaName}}" [closable]="false" [(visible)]="stranicaDeleteVisible" [style.width]="'200px'">
             Jeste li sigurni da želite ukloniti stranicu {{selectedStranicaName}}?
@@ -347,6 +362,29 @@
                   </tr>
               </ng-template>
             </p-table></div>
+        </div>
+        <div class="d-flex flex-column justify-content-center" style="width: 500px;">
+          <div class="d-flex flex-column " [class.disabledDiv]="isFormDisabled">
+            <form class="" [formGroup]="form" (ngSubmit)="addStranica()">
+              <div class="d-flex flex-column">
+                <h5>Dodaj novu stranicu</h5>
+                <p class="py-2">Unesite podatke o stranici: </p>
+              </div>
+              <div class="d-flex form-group " >
+                <label for="naziv">Naziv: *</label>
+                <input name="naziv" type="text" formControlName="naziv" class="form-control w-75" [class.border-danger]="this.hasErrors('naziv')">
+              </div>
+              <div class="d-flex form-group">
+                <label for="oznaka">Oznaka: *</label>
+                <input name="oznaka" type="text" formControlName="oznaka" class="form-control w-75" [class.border-danger]="this.hasErrors('oznaka')">
+              </div>
+              <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-info mr-1" >Dodaj</button>
+                <button type="button" (click)="onOcisti()" class="btn btn-secondary">Očisti</button>
+              </div>
+            </form>
+          </div>
+          <ngb-alert *ngIf="this.alertVisible" type="success" (close)="this.alertVisible = false" class="mt-2">Stranica dodana!</ngb-alert>
         </div>
       </div>
     </div>

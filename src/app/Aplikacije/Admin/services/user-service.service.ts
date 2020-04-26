@@ -32,7 +32,8 @@ export class UserServiceService {
     return this.http.get('http://localhost:8080/prismVezeKorisniciNotApp/' + userId);
   }
 
-  getRoleNotAssignedToUserAndApp(userId) {
+  getRoleNotAssignedToUserAndApp(userId, appId) {
+    return this.http.get('http://localhost:8080/korisniciRole/getUnassignedRole/' + userId + '/' + appId);
   }
 
   getStraniceNotAssignedToApp(appId) {
@@ -81,13 +82,45 @@ export class UserServiceService {
     return this.http.post('http://localhost:8080/prismAplikacije', body, { headers: headers });
   }
 
-  removeAplikacija(appId) {}
+  removeAplikacija(appId) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.delete('http://localhost:8080/prismAplikacije/' + appId, {headers: headers});
+  }
 
-  addRolaForUser(rolaId, userId) {}
+  addRolaForUser(rolaId, userId) {
+    const body = JSON.stringify(
+      {
+        korisnikId1: userId,
+        korisnikId2: rolaId,
+      }
+    );
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.post('http://localhost:8080/odnosiKorisnika', body, { headers: headers });
+  }
 
-  removeRolaForUser(rolaId, userId) {}
+  removeRolaForUser(rolaId, userId) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.delete('http://localhost:8080/odnosiKorisnika/' + userId + '/' + rolaId, { headers: headers });
+  }
 
-  addStranica() {}
+  addStranica(naziv, oznaka) {
+    const body = JSON.stringify(
+      {
+        oznaka: oznaka,
+        naziv: naziv,
+      }
+    );
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.post('http://localhost:8080/prismStranice', body, { headers: headers });
+  }
 
   removeStranica(strId) {
     const headers = new HttpHeaders({

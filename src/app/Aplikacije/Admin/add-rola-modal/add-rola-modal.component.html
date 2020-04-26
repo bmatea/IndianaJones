@@ -1,0 +1,37 @@
+
+<div class="modal-header">
+  <h4 class="modal-title">Odaberite role iz aplikacije {{appId}} koje želite dodati korisniku {{this.userId}}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Closed')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p-table *ngIf="this.role" [columns]="cols" [value]="role" [paginator]=true autoLayout=true [rows]=10 [(selection)]="selectedRole" dataKey="korisnikId">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th style="width: 3em">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+            <td>
+                <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+            </td>
+            <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+<div class="my-2 mt-2 alert alert-secondary" *ngIf="!this.role" >Nema raspoloživih rola.</div>
+</div>
+<div class="modal-footer">
+  <button *ngIf="this.role" type="button" class="btn btn-outline-dark" (click)="addRola()">Dodaj</button>
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Closed')">Zatvori</button>
+</div>
+
