@@ -28,7 +28,9 @@ export class AddStrToAppModalComponent implements OnInit {
 
   onAdd() {
     for (const s of this.selectedStrs) {
-      this.service.addStrToApp(s['id'], this.appId).subscribe(res => this.activeModal.close('dodano'));
+      this.service.addStrToApp(s['id'], this.appId).subscribe(res => {
+        res === 1 ? this.activeModal.close('dodano') : this.activeModal.close('error');
+      });
     }
   }
 

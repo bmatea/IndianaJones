@@ -64,9 +64,28 @@ export class UserServiceService {
     return this.http.delete('http://localhost:8080/prismVezeKorisniciApp/' + userId + '/' + appId, {headers: headers});
   }
 
-  addUser() {}
+  addUser(korisnikId, naziv, email, tip, ime, prezime, lozinka) {
+    const body = JSON.stringify({
+      korisnikId: korisnikId,
+      naziv: naziv,
+      email: email,
+      tkorisnikaId: tip,
+      ime: ime,
+      prezime: prezime,
+      lozinka: lozinka
+    });
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.post('http://localhost:8080/korisniciRole', body, { headers: headers});
+  }
 
-  removeUser(userId) {}
+  removeUser(userId) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.delete('http://localhost:8080/korisniciRole/' + userId, {headers: headers});
+  }
 
   addAplikacija(oznaka, naziv, opis) {
     const body = JSON.stringify(

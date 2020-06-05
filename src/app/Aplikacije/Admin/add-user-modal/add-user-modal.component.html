@@ -1,0 +1,70 @@
+<div class="modal-header">
+  <h4 class="modal-title">Unesite podatke o korisniku</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Closed')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="form" class="ml-3">
+    <div class="d-flex flex-column align-items-center">
+      <div class="d-flex form-group flex-column">
+        <div class="d-flex">
+          <label for="korisnik_id">ID: * </label>
+          <input name="korisnik_id" type="text" formControlName="korisnik_id" class="form-control">
+        </div>
+        <span *ngIf="this.hasErrors('korisnik_id')" class="text-danger d-flex justify-content-end">Obavezan unos</span>
+      </div>
+
+      <div class="d-flex form-group flex-column">
+        <div class="d-flex">
+          <label for="naziv">Naziv: </label>
+          <input name="naziv" type="text" formControlName="naziv" class="form-control">
+        </div>
+      </div>
+
+      <div class="d-flex form-group flex-column">
+        <div class="d-flex">
+          <label for="email">Email: </label>
+          <input name="email" type="text" formControlName="email" class="form-control">
+        </div>
+      </div>
+
+      <div class="d-flex form-group flex-column">
+       <div class="d-flex">
+        <label for="tip">Tip korisnika: *</label>
+        <select formControlName="tip" name="tip" class="form-control" >
+          <option value="null">Odaberite tip...</option>
+          <option value=10>Korisnik</option>
+          <option value=20>Rola</option>
+        </select>
+       </div>
+        <span *ngIf="this.hasErrors('tip')" class="text-danger d-flex justify-content-end">Obavezan unos</span>
+      </div>
+
+      <div class="d-flex form-group flex-column">
+        <div class="d-flex">
+          <label for="ime">Ime: </label>
+          <input name="ime" type="text" formControlName="ime" class="form-control ">
+        </div>
+      </div>
+
+      <div class="d-flex form-group flex-column">
+        <div class="d-flex">
+          <label for="prezime">Prezime: </label>
+          <input name="prezime" type="text" formControlName="prezime" class="form-control">
+        </div>
+      </div>
+
+      <div class="d-flex form-group flex-column">
+        <div class="d-flex">
+          <label for="lozinka">Lozinka: </label>
+          <input name="lozinka" type="text" formControlName="lozinka" class="form-control">
+        </div>
+      </div>
+    </div>
+    </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark bg-success text-white" (click)="onAdd()">Dodaj</button>
+  <button type="button" class="btn btn-outline-dark bg-danger text-white" (click)="activeModal.close('Closed')">Zatvori</button>
+</div>

@@ -24,7 +24,11 @@ export class AddAplikacijaModalComponent implements OnInit {
 
   onAdd() {
     this.service.addAplikacija(this.form.get('oznaka').value, this.form.get('naziv').value, this.form.get('opis').value).subscribe(res => {
-      this.activeModal.close('dodano');
+      if (res === 1) {
+        this.activeModal.close('dodano');
+      } else {
+        this.activeModal.close('error');
+      }
     });
 
   }

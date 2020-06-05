@@ -1,10 +1,10 @@
 # Details
 
-Date : 2020-04-22 16:32:54
+Date : 2020-05-12 15:49:26
 
 Directory c:\Users\Matea\Desktop\IndianaJones\src\app
 
-Total : 125 files,  4182 codes, 233 comments, 663 blanks, all 5078 lines
+Total : 137 files,  5013 codes, 220 comments, 728 blanks, all 5961 lines
 
 [summary](results.md)
 
@@ -12,19 +12,31 @@ Total : 125 files,  4182 codes, 233 comments, 663 blanks, all 5078 lines
 | filename | language | code | comment | blank | total |
 | :--- | :--- | ---: | ---: | ---: | ---: |
 | [src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.css](/src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.css) | CSS | 3 | 0 | 1 | 4 |
-| [src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.html](/src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.html) | HTML | 31 | 0 | 3 | 34 |
+| [src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.html](/src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.html) | HTML | 37 | 0 | 3 | 40 |
 | [src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.spec.ts](/src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
-| [src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.ts](/src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.ts) | TypeScript | 33 | 0 | 8 | 41 |
+| [src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.ts](/src/app/Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component.ts) | TypeScript | 37 | 0 | 8 | 45 |
 | [src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.css](/src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.css) | CSS | 0 | 0 | 1 | 1 |
 | [src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.html](/src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.html) | HTML | 34 | 0 | 1 | 35 |
 | [src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.spec.ts](/src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
-| [src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.ts](/src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.ts) | TypeScript | 29 | 0 | 8 | 37 |
-| [src/app/Aplikacije/Admin/admin/admin.component.css](/src/app/Aplikacije/Admin/admin/admin.component.css) | CSS | 22 | 0 | 8 | 30 |
-| [src/app/Aplikacije/Admin/admin/admin.component.html](/src/app/Aplikacije/Admin/admin/admin.component.html) | HTML | 200 | 112 | 2 | 314 |
+| [src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.ts](/src/app/Aplikacije/Admin/add-app-to-user-modal/add-app-to-user-modal.component.ts) | TypeScript | 34 | 0 | 9 | 43 |
+| [src/app/Aplikacije/Admin/add-rola-modal/add-rola-modal.component.css](/src/app/Aplikacije/Admin/add-rola-modal/add-rola-modal.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [src/app/Aplikacije/Admin/add-rola-modal/add-rola-modal.component.html](/src/app/Aplikacije/Admin/add-rola-modal/add-rola-modal.component.html) | HTML | 35 | 0 | 3 | 38 |
+| [src/app/Aplikacije/Admin/add-rola-modal/add-rola-modal.component.spec.ts](/src/app/Aplikacije/Admin/add-rola-modal/add-rola-modal.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/Aplikacije/Admin/add-rola-modal/add-rola-modal.component.ts](/src/app/Aplikacije/Admin/add-rola-modal/add-rola-modal.component.ts) | TypeScript | 39 | 0 | 6 | 45 |
+| [src/app/Aplikacije/Admin/add-str-to-app-modal/add-str-to-app-modal.component.css](/src/app/Aplikacije/Admin/add-str-to-app-modal/add-str-to-app-modal.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [src/app/Aplikacije/Admin/add-str-to-app-modal/add-str-to-app-modal.component.html](/src/app/Aplikacije/Admin/add-str-to-app-modal/add-str-to-app-modal.component.html) | HTML | 34 | 0 | 1 | 35 |
+| [src/app/Aplikacije/Admin/add-str-to-app-modal/add-str-to-app-modal.component.spec.ts](/src/app/Aplikacije/Admin/add-str-to-app-modal/add-str-to-app-modal.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/Aplikacije/Admin/add-str-to-app-modal/add-str-to-app-modal.component.ts](/src/app/Aplikacije/Admin/add-str-to-app-modal/add-str-to-app-modal.component.ts) | TypeScript | 31 | 0 | 7 | 38 |
+| [src/app/Aplikacije/Admin/add-user-modal/add-user-modal.component.css](/src/app/Aplikacije/Admin/add-user-modal/add-user-modal.component.css) | CSS | 6 | 0 | 2 | 8 |
+| [src/app/Aplikacije/Admin/add-user-modal/add-user-modal.component.html](/src/app/Aplikacije/Admin/add-user-modal/add-user-modal.component.html) | HTML | 64 | 0 | 7 | 71 |
+| [src/app/Aplikacije/Admin/add-user-modal/add-user-modal.component.spec.ts](/src/app/Aplikacije/Admin/add-user-modal/add-user-modal.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
+| [src/app/Aplikacije/Admin/add-user-modal/add-user-modal.component.ts](/src/app/Aplikacije/Admin/add-user-modal/add-user-modal.component.ts) | TypeScript | 50 | 0 | 7 | 57 |
+| [src/app/Aplikacije/Admin/admin/admin.component.css](/src/app/Aplikacije/Admin/admin/admin.component.css) | CSS | 29 | 0 | 13 | 42 |
+| [src/app/Aplikacije/Admin/admin/admin.component.html](/src/app/Aplikacije/Admin/admin/admin.component.html) | HTML | 329 | 112 | 2 | 443 |
 | [src/app/Aplikacije/Admin/admin/admin.component.spec.ts](/src/app/Aplikacije/Admin/admin/admin.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
-| [src/app/Aplikacije/Admin/admin/admin.component.ts](/src/app/Aplikacije/Admin/admin/admin.component.ts) | TypeScript | 199 | 7 | 40 | 246 |
+| [src/app/Aplikacije/Admin/admin/admin.component.ts](/src/app/Aplikacije/Admin/admin/admin.component.ts) | TypeScript | 428 | 9 | 44 | 481 |
 | [src/app/Aplikacije/Admin/services/user-service.service.spec.ts](/src/app/Aplikacije/Admin/services/user-service.service.spec.ts) | TypeScript | 9 | 0 | 4 | 13 |
-| [src/app/Aplikacije/Admin/services/user-service.service.ts](/src/app/Aplikacije/Admin/services/user-service.service.ts) | TypeScript | 68 | 0 | 23 | 91 |
+| [src/app/Aplikacije/Admin/services/user-service.service.ts](/src/app/Aplikacije/Admin/services/user-service.service.ts) | TypeScript | 147 | 0 | 24 | 171 |
 | [src/app/Aplikacije/SIMP/modem-info-modal/modem-info-modal.component.css](/src/app/Aplikacije/SIMP/modem-info-modal/modem-info-modal.component.css) | CSS | 0 | 0 | 1 | 1 |
 | [src/app/Aplikacije/SIMP/modem-info-modal/modem-info-modal.component.html](/src/app/Aplikacije/SIMP/modem-info-modal/modem-info-modal.component.html) | HTML | 52 | 0 | 1 | 53 |
 | [src/app/Aplikacije/SIMP/modem-info-modal/modem-info-modal.component.spec.ts](/src/app/Aplikacije/SIMP/modem-info-modal/modem-info-modal.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
@@ -62,15 +74,15 @@ Total : 125 files,  4182 codes, 233 comments, 663 blanks, all 5078 lines
 | [src/app/app.component.html](/src/app/app.component.html) | HTML | 2 | 0 | 1 | 3 |
 | [src/app/app.component.spec.ts](/src/app/app.component.spec.ts) | TypeScript | 31 | 0 | 5 | 36 |
 | [src/app/app.component.ts](/src/app/app.component.ts) | TypeScript | 27 | 0 | 5 | 32 |
-| [src/app/app.module.ts](/src/app/app.module.ts) | TypeScript | 105 | 0 | 7 | 112 |
-| [src/app/application-content/application-content.component.css](/src/app/application-content/application-content.component.css) | CSS | 3 | 3 | 2 | 8 |
-| [src/app/application-content/application-content.component.html](/src/app/application-content/application-content.component.html) | HTML | 17 | 6 | 6 | 29 |
+| [src/app/app.module.ts](/src/app/app.module.ts) | TypeScript | 114 | 0 | 7 | 121 |
+| [src/app/application-content/application-content.component.css](/src/app/application-content/application-content.component.css) | CSS | 31 | 4 | 6 | 41 |
+| [src/app/application-content/application-content.component.html](/src/app/application-content/application-content.component.html) | HTML | 17 | 13 | 7 | 37 |
 | [src/app/application-content/application-content.component.spec.ts](/src/app/application-content/application-content.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
-| [src/app/application-content/application-content.component.ts](/src/app/application-content/application-content.component.ts) | TypeScript | 38 | 26 | 11 | 75 |
+| [src/app/application-content/application-content.component.ts](/src/app/application-content/application-content.component.ts) | TypeScript | 40 | 3 | 7 | 50 |
 | [src/app/application/application.component.css](/src/app/application/application.component.css) | CSS | 11 | 0 | 3 | 14 |
 | [src/app/application/application.component.html](/src/app/application/application.component.html) | HTML | 3 | 0 | 4 | 7 |
 | [src/app/application/application.component.spec.ts](/src/app/application/application.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
-| [src/app/application/application.component.ts](/src/app/application/application.component.ts) | TypeScript | 25 | 5 | 6 | 36 |
+| [src/app/application/application.component.ts](/src/app/application/application.component.ts) | TypeScript | 26 | 5 | 6 | 37 |
 | [src/app/auth-interceptor.spec.ts](/src/app/auth-interceptor.spec.ts) | TypeScript | 6 | 0 | 2 | 8 |
 | [src/app/auth-interceptor.ts](/src/app/auth-interceptor.ts) | TypeScript | 29 | 1 | 6 | 36 |
 | [src/app/component.directive.spec.ts](/src/app/component.directive.spec.ts) | TypeScript | 7 | 0 | 2 | 9 |
@@ -101,9 +113,9 @@ Total : 125 files,  4182 codes, 233 comments, 663 blanks, all 5078 lines
 | [src/app/models/stranice-adapter.spec.ts](/src/app/models/stranice-adapter.spec.ts) | TypeScript | 6 | 0 | 2 | 8 |
 | [src/app/models/stranice-adapter.ts](/src/app/models/stranice-adapter.ts) | TypeScript | 15 | 1 | 4 | 20 |
 | [src/app/navigation/navigation.component.css](/src/app/navigation/navigation.component.css) | CSS | 3 | 0 | 1 | 4 |
-| [src/app/navigation/navigation.component.html](/src/app/navigation/navigation.component.html) | HTML | 20 | 16 | 3 | 39 |
+| [src/app/navigation/navigation.component.html](/src/app/navigation/navigation.component.html) | HTML | 21 | 16 | 3 | 40 |
 | [src/app/navigation/navigation.component.spec.ts](/src/app/navigation/navigation.component.spec.ts) | TypeScript | 20 | 0 | 6 | 26 |
-| [src/app/navigation/navigation.component.ts](/src/app/navigation/navigation.component.ts) | TypeScript | 22 | 1 | 6 | 29 |
+| [src/app/navigation/navigation.component.ts](/src/app/navigation/navigation.component.ts) | TypeScript | 34 | 1 | 6 | 41 |
 | [src/app/permissions/has-permission.directive.spec.ts](/src/app/permissions/has-permission.directive.spec.ts) | TypeScript | 7 | 0 | 2 | 9 |
 | [src/app/permissions/has-permission.directive.ts](/src/app/permissions/has-permission.directive.ts) | TypeScript | 26 | 0 | 7 | 33 |
 | [src/app/permissions/permission.query.ts](/src/app/permissions/permission.query.ts) | TypeScript | 17 | 0 | 6 | 23 |

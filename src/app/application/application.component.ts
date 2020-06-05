@@ -26,7 +26,8 @@ export class ApplicationComponent implements OnInit {
 
       let params2: NavigationExtras = {
         queryParams: {
-          'appId': this.app.id
+          'appId': this.app.id,
+          'appName': this.app.name
         }
       }
       this.router.navigate(['/appContent'], params2);

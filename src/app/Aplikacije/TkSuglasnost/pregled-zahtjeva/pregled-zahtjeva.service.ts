@@ -15,7 +15,8 @@ export class PregledZahtjevaService{
   constructor(private http: HttpClient) { }
 
   getDetails(sporazumId, email) {
-    return this.http.get('http://172.22.3.100:32603/tk_suglasnost/api/sporazum?sporazumId=' + sporazumId + '&mail=' + email);
+    //172.22.3.100:32603/tk_suglasnost/api/
+    return this.http.get('http://wsapi.ht.ba/TK_SUGLASNOST/api/sporazum?sporazumId=' + sporazumId + '&mail=' + email);
   }
 
   downloadFiles(sporazumId) {

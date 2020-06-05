@@ -19,8 +19,9 @@
   <div class="container-fluid ">
       <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav">
-              <a routerLink="/" class="nav-item nav-link text-white">Home</a>
-              <a href="#" class="nav-item nav-link text-white" *hasPermission="'ROLA_TELEP_PROJEKT'">Link za telp</a>
+              <a href="javascript:void(0)" *ngIf="this.appName" (click)="menuClick()" class="nav-item nav-link text-white" ><i class="fas fa-bars"></i></a>
+              <a *ngIf="this.isLoggedIn" routerLink="/" class="nav-item nav-link text-white">Home</a> <span class="text-white d-flex align-items-center">{{this.appName? '> '+this.appName : ''}}</span>
+              <!-- <a href="#" class="nav-item nav-link text-white" *hasPermission="'ROLA_TELEP_PROJEKT'">Link za telp</a> -->
           </div>
       </div>
       <div *ngIf="this.isLoggedIn"  class="collapse navbar-collapse justify-content-end mr-3">

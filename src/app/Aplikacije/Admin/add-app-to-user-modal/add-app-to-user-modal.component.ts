@@ -28,7 +28,13 @@ export class AddAppToUserModalComponent implements OnInit {
   onAdd() {
     console.log(this.selectedApps);
     for (let app of this.selectedApps) {
-      this.service.addAppForUser(app['id'], this.userId).subscribe(res => this.activeModal.close('dodano'));
+      this.service.addAppForUser(app['id'], this.userId).subscribe(res => {
+        if (res === 1) {
+        this.activeModal.close('dodano');
+      } else {
+        this.activeModal.close('error');
+      }
+      });
     }
 
   }

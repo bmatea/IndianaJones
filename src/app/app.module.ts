@@ -40,6 +40,7 @@ import { AddAppToUserModalComponent } from './Aplikacije/Admin/add-app-to-user-m
 import { AddAplikacijaModalComponent } from './Aplikacije/Admin/add-aplikacija-modal/add-aplikacija-modal.component';
 import { AddStrToAppModalComponent } from './Aplikacije/Admin/add-str-to-app-modal/add-str-to-app-modal.component';
 import { AddRolaModalComponent } from './Aplikacije/Admin/add-rola-modal/add-rola-modal.component';
+import { AddUserModalComponent } from './Aplikacije/Admin/add-user-modal/add-user-modal.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { AddRolaModalComponent } from './Aplikacije/Admin/add-rola-modal/add-rol
     AddAplikacijaModalComponent,
     AddStrToAppModalComponent,
     AddRolaModalComponent,
+    AddUserModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,6 +102,7 @@ import { AddRolaModalComponent } from './Aplikacije/Admin/add-rola-modal/add-rol
     AddAplikacijaModalComponent,
     AddStrToAppModalComponent,
     AddRolaModalComponent,
+    AddUserModalComponent,
 
 
     Test1Component,

@@ -18,6 +18,7 @@ export class ApplicationContentComponent implements OnInit, OnDestroy {
   base = window.location.href;
   active = 1;
   selectedcomponent;
+  appName;
  // @ViewChildren('componentHost') public componentHosts: QueryList<ViewContainerRef>;
 
   constructor(
@@ -28,6 +29,7 @@ export class ApplicationContentComponent implements OnInit, OnDestroy {
     ) {
     this.activatedRoute.queryParams.subscribe(params => {
       console.log(params['appId']);
+      this.appName = params['appName'];
       //return this.components = JSON.parse(params['components']);
       this.userService.getStranice(params['appId']).subscribe(strs => {
         this.components = strs;
@@ -41,34 +43,7 @@ export class ApplicationContentComponent implements OnInit, OnDestroy {
     //this.loadComponent();
 
   }
-
-
-  // ngAfterContentInit(): void {
-  //   console.log(this.components);
-  //   this.componentHosts.changes.subscribe(comps => {
-  //     comps.map(
-  //       (vcr: ViewContainerRef, index: number) => {
-  //         const factory = this.componentFactoryResolver.resolveComponentFactory(
-  //           this.components[index].component
-  //         );
-  //         vcr.createComponent(factory);
-  //       }
-  //     );
-  //   });
-  //  // this.componentHosts
-  // }
-
   ngOnDestroy() {
   }
-
-  // loadComponent() {
-  //   for (const a of this.components) {
-  //     const factory = this.componentFactoryResolver.resolveComponentFactory(a.component);
-  //     const viewContainerRef = this.componentHosts.viewContainerRef;
-  //     //viewContainerRef.clear();
-  //     const componentRef = viewContainerRef.createComponent(factory);
-  //     (componentRef.instance as StranicaComponent).data = a.data;
-  //   }
-  // }
 
 }

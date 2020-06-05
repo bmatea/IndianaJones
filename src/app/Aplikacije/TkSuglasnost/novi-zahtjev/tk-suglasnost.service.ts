@@ -32,6 +32,7 @@ export class TkSuglasnostService {
   }
 
   postNoviZahtjev(payload) {
+    //
     return this.http.post('http://172.22.3.100:32603/tk_suglasnost/NovaStranka', payload).pipe(
       catchError(error => error)
     );

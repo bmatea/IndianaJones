@@ -1,27 +1,30 @@
-Date : 2020-04-22 16:32:54
+Date : 2020-05-12 15:49:26
 Directory : c:\Users\Matea\Desktop\IndianaJones\src\app
-Total : 125 files,  4182 codes, 233 comments, 663 blanks, all 5078 lines
+Total : 137 files,  5013 codes, 220 comments, 728 blanks, all 5961 lines
 
 Languages
 +------------+------------+------------+------------+------------+------------+
 | language   | files      | code       | comment    | blank      | total      |
 +------------+------------+------------+------------+------------+------------+
-| TypeScript |         87 |      2,594 |         74 |        584 |      3,252 |
-| HTML       |         19 |      1,519 |        148 |         44 |      1,711 |
-| CSS        |         19 |         69 |         11 |         35 |        115 |
+| TypeScript |         93 |      3,115 |         53 |        624 |      3,792 |
+| HTML       |         22 |      1,788 |        155 |         56 |      1,999 |
+| CSS        |         22 |        110 |         12 |         48 |        170 |
 +------------+------------+------------+------------+------------+------------+
 
 Directories
 +----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
 | path                                                                                                                       | files      | code       | comment    | blank      | total      |
 +----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
-| .                                                                                                                          |        125 |      4,182 |        233 |        663 |      5,078 |
-| Aplikacije                                                                                                                 |         38 |      2,881 |        167 |        317 |      3,365 |
-| Aplikacije\Admin                                                                                                           |         14 |        688 |        119 |        117 |        924 |
-| Aplikacije\Admin\add-aplikacija-modal                                                                                      |          4 |         87 |          0 |         18 |        105 |
-| Aplikacije\Admin\add-app-to-user-modal                                                                                     |          4 |         83 |          0 |         16 |         99 |
-| Aplikacije\Admin\admin                                                                                                     |          4 |        441 |        119 |         56 |        616 |
-| Aplikacije\Admin\services                                                                                                  |          2 |         77 |          0 |         27 |        104 |
+| .                                                                                                                          |        137 |      5,013 |        220 |        728 |      5,961 |
+| Aplikacije                                                                                                                 |         50 |      3,659 |        169 |        381 |      4,209 |
+| Aplikacije\Admin                                                                                                           |         26 |      1,466 |        121 |        181 |      1,768 |
+| Aplikacije\Admin\add-aplikacija-modal                                                                                      |          4 |         97 |          0 |         18 |        115 |
+| Aplikacije\Admin\add-app-to-user-modal                                                                                     |          4 |         88 |          0 |         17 |        105 |
+| Aplikacije\Admin\add-rola-modal                                                                                            |          4 |         94 |          0 |         16 |        110 |
+| Aplikacije\Admin\add-str-to-app-modal                                                                                      |          4 |         85 |          0 |         15 |        100 |
+| Aplikacije\Admin\add-user-modal                                                                                            |          4 |        140 |          0 |         22 |        162 |
+| Aplikacije\Admin\admin                                                                                                     |          4 |        806 |        121 |         65 |        992 |
+| Aplikacije\Admin\services                                                                                                  |          2 |        156 |          0 |         28 |        184 |
 | Aplikacije\SIMP                                                                                                            |         10 |      1,352 |         24 |         93 |      1,469 |
 | Aplikacije\SIMP\modem-info-modal                                                                                           |          4 |         86 |          0 |         14 |        100 |
 | Aplikacije\SIMP\services                                                                                                   |          2 |        185 |         17 |         30 |        232 |
@@ -31,13 +34,13 @@ Directories
 | Aplikacije\TkSuglasnost\pregled-zahtjeva                                                                                   |          6 |        247 |          9 |         37 |        293 |
 | akitaAuth                                                                                                                  |          4 |         76 |          2 |         25 |        103 |
 | app-menu                                                                                                                   |          4 |         50 |          5 |         15 |         70 |
-| application                                                                                                                |          4 |         59 |          5 |         19 |         83 |
-| application-content                                                                                                        |          4 |         78 |         35 |         25 |        138 |
+| application                                                                                                                |          4 |         60 |          5 |         19 |         84 |
+| application-content                                                                                                        |          4 |        108 |         20 |         26 |        154 |
 | footer                                                                                                                     |          4 |         57 |          0 |         17 |         74 |
 | interfaces                                                                                                                 |          2 |          6 |          0 |          2 |          8 |
 | login                                                                                                                      |          4 |        125 |          0 |         19 |        144 |
 | models                                                                                                                     |         14 |        107 |          1 |         34 |        142 |
-| navigation                                                                                                                 |          4 |         65 |         17 |         16 |         98 |
+| navigation                                                                                                                 |          4 |         78 |         17 |         16 |        111 |
 | permissions                                                                                                                |          4 |         69 |          0 |         21 |         90 |
 | protected                                                                                                                  |          4 |         37 |          0 |         14 |         51 |
 | services                                                                                                                   |          8 |        150 |          0 |         46 |        196 |
@@ -53,19 +56,31 @@ Files
 | filename                                                                                                                   | language   | code       | comment    | blank      | total      |
 +----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
 | c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-aplikacija-modal\add-aplikacija-modal.component.css       | CSS        |          3 |          0 |          1 |          4 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-aplikacija-modal\add-aplikacija-modal.component.html      | HTML       |         31 |          0 |          3 |         34 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-aplikacija-modal\add-aplikacija-modal.component.html      | HTML       |         37 |          0 |          3 |         40 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-aplikacija-modal\add-aplikacija-modal.component.spec.ts   | TypeScript |         20 |          0 |          6 |         26 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-aplikacija-modal\add-aplikacija-modal.component.ts        | TypeScript |         33 |          0 |          8 |         41 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-aplikacija-modal\add-aplikacija-modal.component.ts        | TypeScript |         37 |          0 |          8 |         45 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-app-to-user-modal\add-app-to-user-modal.component.css     | CSS        |          0 |          0 |          1 |          1 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-app-to-user-modal\add-app-to-user-modal.component.html    | HTML       |         34 |          0 |          1 |         35 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-app-to-user-modal\add-app-to-user-modal.component.spec.ts | TypeScript |         20 |          0 |          6 |         26 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-app-to-user-modal\add-app-to-user-modal.component.ts      | TypeScript |         29 |          0 |          8 |         37 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\admin\admin.component.css                                     | CSS        |         22 |          0 |          8 |         30 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\admin\admin.component.html                                    | HTML       |        200 |        112 |          2 |        314 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-app-to-user-modal\add-app-to-user-modal.component.ts      | TypeScript |         34 |          0 |          9 |         43 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-rola-modal\add-rola-modal.component.css                   | CSS        |          0 |          0 |          1 |          1 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-rola-modal\add-rola-modal.component.html                  | HTML       |         35 |          0 |          3 |         38 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-rola-modal\add-rola-modal.component.spec.ts               | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-rola-modal\add-rola-modal.component.ts                    | TypeScript |         39 |          0 |          6 |         45 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-str-to-app-modal\add-str-to-app-modal.component.css       | CSS        |          0 |          0 |          1 |          1 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-str-to-app-modal\add-str-to-app-modal.component.html      | HTML       |         34 |          0 |          1 |         35 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-str-to-app-modal\add-str-to-app-modal.component.spec.ts   | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-str-to-app-modal\add-str-to-app-modal.component.ts        | TypeScript |         31 |          0 |          7 |         38 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-user-modal\add-user-modal.component.css                   | CSS        |          6 |          0 |          2 |          8 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-user-modal\add-user-modal.component.html                  | HTML       |         64 |          0 |          7 |         71 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-user-modal\add-user-modal.component.spec.ts               | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\add-user-modal\add-user-modal.component.ts                    | TypeScript |         50 |          0 |          7 |         57 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\admin\admin.component.css                                     | CSS        |         29 |          0 |         13 |         42 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\admin\admin.component.html                                    | HTML       |        329 |        112 |          2 |        443 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\admin\admin.component.spec.ts                                 | TypeScript |         20 |          0 |          6 |         26 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\admin\admin.component.ts                                      | TypeScript |        199 |          7 |         40 |        246 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\admin\admin.component.ts                                      | TypeScript |        428 |          9 |         44 |        481 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\services\user-service.service.spec.ts                         | TypeScript |          9 |          0 |          4 |         13 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\services\user-service.service.ts                              | TypeScript |         68 |          0 |         23 |         91 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\Admin\services\user-service.service.ts                              | TypeScript |        147 |          0 |         24 |        171 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\SIMP\modem-info-modal\modem-info-modal.component.css                | CSS        |          0 |          0 |          1 |          1 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\SIMP\modem-info-modal\modem-info-modal.component.html               | HTML       |         52 |          0 |          1 |         53 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\Aplikacije\SIMP\modem-info-modal\modem-info-modal.component.spec.ts            | TypeScript |         20 |          0 |          6 |         26 |
@@ -103,15 +118,15 @@ Files
 | c:\Users\Matea\Desktop\IndianaJones\src\app\app.component.html                                                             | HTML       |          2 |          0 |          1 |          3 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\app.component.spec.ts                                                          | TypeScript |         31 |          0 |          5 |         36 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\app.component.ts                                                               | TypeScript |         27 |          0 |          5 |         32 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\app.module.ts                                                                  | TypeScript |        105 |          0 |          7 |        112 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\application-content\application-content.component.css                          | CSS        |          3 |          3 |          2 |          8 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\application-content\application-content.component.html                         | HTML       |         17 |          6 |          6 |         29 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\app.module.ts                                                                  | TypeScript |        114 |          0 |          7 |        121 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\application-content\application-content.component.css                          | CSS        |         31 |          4 |          6 |         41 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\application-content\application-content.component.html                         | HTML       |         17 |         13 |          7 |         37 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\application-content\application-content.component.spec.ts                      | TypeScript |         20 |          0 |          6 |         26 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\application-content\application-content.component.ts                           | TypeScript |         38 |         26 |         11 |         75 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\application-content\application-content.component.ts                           | TypeScript |         40 |          3 |          7 |         50 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\application\application.component.css                                          | CSS        |         11 |          0 |          3 |         14 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\application\application.component.html                                         | HTML       |          3 |          0 |          4 |          7 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\application\application.component.spec.ts                                      | TypeScript |         20 |          0 |          6 |         26 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\application\application.component.ts                                           | TypeScript |         25 |          5 |          6 |         36 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\application\application.component.ts                                           | TypeScript |         26 |          5 |          6 |         37 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\auth-interceptor.spec.ts                                                       | TypeScript |          6 |          0 |          2 |          8 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\auth-interceptor.ts                                                            | TypeScript |         29 |          1 |          6 |         36 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\component.directive.spec.ts                                                    | TypeScript |          7 |          0 |          2 |          9 |
@@ -142,9 +157,9 @@ Files
 | c:\Users\Matea\Desktop\IndianaJones\src\app\models\stranice-adapter.spec.ts                                                | TypeScript |          6 |          0 |          2 |          8 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\models\stranice-adapter.ts                                                     | TypeScript |         15 |          1 |          4 |         20 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\navigation\navigation.component.css                                            | CSS        |          3 |          0 |          1 |          4 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\navigation\navigation.component.html                                           | HTML       |         20 |         16 |          3 |         39 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\navigation\navigation.component.html                                           | HTML       |         21 |         16 |          3 |         40 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\navigation\navigation.component.spec.ts                                        | TypeScript |         20 |          0 |          6 |         26 |
-| c:\Users\Matea\Desktop\IndianaJones\src\app\navigation\navigation.component.ts                                             | TypeScript |         22 |          1 |          6 |         29 |
+| c:\Users\Matea\Desktop\IndianaJones\src\app\navigation\navigation.component.ts                                             | TypeScript |         34 |          1 |          6 |         41 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\permissions\has-permission.directive.spec.ts                                   | TypeScript |          7 |          0 |          2 |          9 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\permissions\has-permission.directive.ts                                        | TypeScript |         26 |          0 |          7 |         33 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\permissions\permission.query.ts                                                | TypeScript |         17 |          0 |          6 |         23 |
@@ -177,5 +192,5 @@ Files
 | c:\Users\Matea\Desktop\IndianaJones\src\app\test\test.component.html                                                       | HTML       |          1 |          0 |          1 |          2 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\test\test.component.spec.ts                                                    | TypeScript |         20 |          0 |          6 |         26 |
 | c:\Users\Matea\Desktop\IndianaJones\src\app\test\test.component.ts                                                         | TypeScript |         11 |          0 |          5 |         16 |
-| Total                                                                                                                      |            |      4,182 |        233 |        663 |      5,078 |
+| Total                                                                                                                      |            |      5,013 |        220 |        728 |      5,961 |
 +----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

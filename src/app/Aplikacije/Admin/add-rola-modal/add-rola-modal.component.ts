@@ -31,9 +31,14 @@ export class AddRolaModalComponent implements OnInit {
 
   addRola() {
     for (const rola of this.selectedRole) {
-      this.service.addRolaForUser(rola['korisnikId'], this.userId).subscribe(res => console.log(res), err => console.log(err));
+      this.service.addRolaForUser(rola['korisnikId'], this.userId).subscribe(res => {
+        console.log(res);
+        res === 1 ? this.activeModal.close('dodano') : this.activeModal.close('error');
+      }, err => {
+        console.log(err);
+        this.activeModal.close('error');
+      });
     }
-    this.activeModal.close('dodano');
   }
 
 }
